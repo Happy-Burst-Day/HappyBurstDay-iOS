@@ -10,6 +10,7 @@ import Alamofire
 protocol NetworkManagerDelegate:NSObject{ }
 final class NetworkManager:NSObject,NetworkManagerDelegate{
     static let shared = NetworkManager()
+    static let accessExpireSeconds:Double = 60 * 60
     lazy var auth = AuthManager(delegate: self)
     override init() { super.init() }
 }

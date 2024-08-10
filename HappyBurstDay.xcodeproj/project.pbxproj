@@ -11,9 +11,23 @@
 		634195492C67A6D300ADC9AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195482C67A6D300ADC9AB /* NetworkManager.swift */; };
 		6341954C2C67A6FE00ADC9AB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6341954B2C67A6FE00ADC9AB /* Alamofire */; };
 		6341954E2C67A7FD00ADC9AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341954D2C67A7FD00ADC9AB /* AuthManager.swift */; };
-		634195522C67A84B00ADC9AB /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195512C67A84B00ADC9AB /* LogInView.swift */; };
+		634195522C67A84B00ADC9AB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195512C67A84B00ADC9AB /* SignInView.swift */; };
 		634195552C67A9A300ADC9AB /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195542C67A9A300ADC9AB /* AuthRouter.swift */; };
 		634195572C67AA7400ADC9AB /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195562C67AA7400ADC9AB /* NetworkErrors.swift */; };
+		6341955A2C67B71A00ADC9AB /* API_Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195592C67B71A00ADC9AB /* API_Key.swift */; };
+		6341955D2C67B89500ADC9AB /* SignInVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341955C2C67B89500ADC9AB /* SignInVM.swift */; };
+		634195622C67C86F00ADC9AB /* SignUpDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195612C67C86F00ADC9AB /* SignUpDto.swift */; };
+		634195642C67C89000ADC9AB /* SignInDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195632C67C89000ADC9AB /* SignInDto.swift */; };
+		634195662C67C8B100ADC9AB /* ReissueDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195652C67C8B100ADC9AB /* ReissueDto.swift */; };
+		634195682C67CD4E00ADC9AB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195672C67CD4E00ADC9AB /* SignUpView.swift */; };
+		6341956A2C67CD8E00ADC9AB /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195692C67CD8E00ADC9AB /* SignView.swift */; };
+		6341956C2C67CEA400ADC9AB /* SignVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341956B2C67CEA400ADC9AB /* SignVM.swift */; };
+		6341956E2C67D02400ADC9AB /* NavigationEnvironments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341956D2C67D02400ADC9AB /* NavigationEnvironments.swift */; };
+		634195722C67D4A100ADC9AB /* SignUpEmailCPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195712C67D4A100ADC9AB /* SignUpEmailCPT.swift */; };
+		634195742C67D53100ADC9AB /* SingUpPasswordCPT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195732C67D53100ADC9AB /* SingUpPasswordCPT.swift */; };
+		634195762C67DC8900ADC9AB /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195752C67DC8900ADC9AB /* SignUpVM.swift */; };
+		634195782C67E15400ADC9AB /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195772C67E15400ADC9AB /* AuthInterceptor.swift */; };
+		6341957A2C67ED4200ADC9AB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195792C67ED4200ADC9AB /* DateExtension.swift */; };
 		DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */; };
 		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
@@ -33,10 +47,24 @@
 /* Begin PBXFileReference section */
 		634195482C67A6D300ADC9AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6341954D2C67A7FD00ADC9AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		634195512C67A84B00ADC9AB /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		634195512C67A84B00ADC9AB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		634195542C67A9A300ADC9AB /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		634195562C67AA7400ADC9AB /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
 		634195582C67AC7400ADC9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		634195592C67B71A00ADC9AB /* API_Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_Key.swift; sourceTree = "<group>"; };
+		6341955C2C67B89500ADC9AB /* SignInVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVM.swift; sourceTree = "<group>"; };
+		634195612C67C86F00ADC9AB /* SignUpDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDto.swift; sourceTree = "<group>"; };
+		634195632C67C89000ADC9AB /* SignInDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInDto.swift; sourceTree = "<group>"; };
+		634195652C67C8B100ADC9AB /* ReissueDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReissueDto.swift; sourceTree = "<group>"; };
+		634195672C67CD4E00ADC9AB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		634195692C67CD8E00ADC9AB /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
+		6341956B2C67CEA400ADC9AB /* SignVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignVM.swift; sourceTree = "<group>"; };
+		6341956D2C67D02400ADC9AB /* NavigationEnvironments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEnvironments.swift; sourceTree = "<group>"; };
+		634195712C67D4A100ADC9AB /* SignUpEmailCPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailCPT.swift; sourceTree = "<group>"; };
+		634195732C67D53100ADC9AB /* SingUpPasswordCPT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpPasswordCPT.swift; sourceTree = "<group>"; };
+		634195752C67DC8900ADC9AB /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
+		634195772C67E15400ADC9AB /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
+		634195792C67ED4200ADC9AB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBurstDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBurstDayApp.swift; sourceTree = "<group>"; };
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +98,9 @@
 		634195472C67A6C500ADC9AB /* Greem */ = {
 			isa = PBXGroup;
 			children = (
+				6341956F2C67D02B00ADC9AB /* Environments */,
+				6341955B2C67B87F00ADC9AB /* GreemViewModels */,
+				634195592C67B71A00ADC9AB /* API_Key.swift */,
 				634195502C67A84200ADC9AB /* GreemViews */,
 				6341954F2C67A83800ADC9AB /* Networks */,
 			);
@@ -79,10 +110,12 @@
 		6341954F2C67A83800ADC9AB /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				6341955E2C67BFC700ADC9AB /* NetworkModels */,
 				634195532C67A99B00ADC9AB /* Routers */,
 				634195482C67A6D300ADC9AB /* NetworkManager.swift */,
 				6341954D2C67A7FD00ADC9AB /* AuthManager.swift */,
 				634195562C67AA7400ADC9AB /* NetworkErrors.swift */,
+				634195772C67E15400ADC9AB /* AuthInterceptor.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -90,7 +123,9 @@
 		634195502C67A84200ADC9AB /* GreemViews */ = {
 			isa = PBXGroup;
 			children = (
-				634195512C67A84B00ADC9AB /* LogInView.swift */,
+				634195702C67D48E00ADC9AB /* SignUpView */,
+				634195512C67A84B00ADC9AB /* SignInView.swift */,
+				634195692C67CD8E00ADC9AB /* SignView.swift */,
 			);
 			path = GreemViews;
 			sourceTree = "<group>";
@@ -101,6 +136,44 @@
 				634195542C67A9A300ADC9AB /* AuthRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		6341955B2C67B87F00ADC9AB /* GreemViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6341955C2C67B89500ADC9AB /* SignInVM.swift */,
+				6341956B2C67CEA400ADC9AB /* SignVM.swift */,
+				634195752C67DC8900ADC9AB /* SignUpVM.swift */,
+			);
+			path = GreemViewModels;
+			sourceTree = "<group>";
+		};
+		6341955E2C67BFC700ADC9AB /* NetworkModels */ = {
+			isa = PBXGroup;
+			children = (
+				634195612C67C86F00ADC9AB /* SignUpDto.swift */,
+				634195632C67C89000ADC9AB /* SignInDto.swift */,
+				634195652C67C8B100ADC9AB /* ReissueDto.swift */,
+			);
+			path = NetworkModels;
+			sourceTree = "<group>";
+		};
+		6341956F2C67D02B00ADC9AB /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				6341956D2C67D02400ADC9AB /* NavigationEnvironments.swift */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		634195702C67D48E00ADC9AB /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				634195672C67CD4E00ADC9AB /* SignUpView.swift */,
+				634195712C67D4A100ADC9AB /* SignUpEmailCPT.swift */,
+				634195732C67D53100ADC9AB /* SingUpPasswordCPT.swift */,
+			);
+			path = SignUpView;
 			sourceTree = "<group>";
 		};
 		DF4D8D632C663021005BAD8B = {
@@ -178,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				DFAB18862C679C42007D2765 /* Helper+PretendardFont.swift */,
+				634195792C67ED4200ADC9AB /* DateExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -269,14 +343,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				634195522C67A84B00ADC9AB /* LogInView.swift in Sources */,
+				6341956E2C67D02400ADC9AB /* NavigationEnvironments.swift in Sources */,
+				634195522C67A84B00ADC9AB /* SignInView.swift in Sources */,
+				6341955A2C67B71A00ADC9AB /* API_Key.swift in Sources */,
 				634195492C67A6D300ADC9AB /* NetworkManager.swift in Sources */,
 				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
+				6341955D2C67B89500ADC9AB /* SignInVM.swift in Sources */,
+				634195642C67C89000ADC9AB /* SignInDto.swift in Sources */,
+				6341956A2C67CD8E00ADC9AB /* SignView.swift in Sources */,
 				634195552C67A9A300ADC9AB /* AuthRouter.swift in Sources */,
 				DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */,
+				634195662C67C8B100ADC9AB /* ReissueDto.swift in Sources */,
 				634195572C67AA7400ADC9AB /* NetworkErrors.swift in Sources */,
+				6341956C2C67CEA400ADC9AB /* SignVM.swift in Sources */,
+				634195682C67CD4E00ADC9AB /* SignUpView.swift in Sources */,
+				634195622C67C86F00ADC9AB /* SignUpDto.swift in Sources */,
+				634195782C67E15400ADC9AB /* AuthInterceptor.swift in Sources */,
 				DFAB18872C679C42007D2765 /* Helper+PretendardFont.swift in Sources */,
+				6341957A2C67ED4200ADC9AB /* DateExtension.swift in Sources */,
+				634195722C67D4A100ADC9AB /* SignUpEmailCPT.swift in Sources */,
 				6341954E2C67A7FD00ADC9AB /* AuthManager.swift in Sources */,
+				634195762C67DC8900ADC9AB /* SignUpVM.swift in Sources */,
+				634195742C67D53100ADC9AB /* SingUpPasswordCPT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -392,7 +480,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -410,15 +498,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HappyBurstDay/Preview Content\"";
-				DEVELOPMENT_TEAM = 4QMNM64P9Z;
+				DEVELOPMENT_TEAM = 3W9F68ZTUJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HappyBurstDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,15 +528,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HappyBurstDay/Preview Content\"";
-				DEVELOPMENT_TEAM = 4QMNM64P9Z;
+				DEVELOPMENT_TEAM = 3W9F68ZTUJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HappyBurstDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

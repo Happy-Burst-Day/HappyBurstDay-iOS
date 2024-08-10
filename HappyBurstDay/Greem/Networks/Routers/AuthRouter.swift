@@ -10,10 +10,70 @@ import Alamofire
 
 
 enum AuthRouter: URLRequestConvertible{
-   case signUp,signIn
+    static let baseURL = URL(string: API_Key.baseURL + "/user")
+    case user
+    case signUp(email:String,pw:String,birthDate:Date)
+    case signIn(email:String,pw:String)
+    case reissue(accessToken:String, refreshToken: String)
+    var endPath: String{
+        switch self{
+        case .signIn: "/login"
+        case .signUp,.user: ""
+        case .reissue: "/reissue"
+        }
+    }
     
+    var method:HTTPMethod{
+        switch self{
+        case .user: .get
+        case .signUp,.signIn,.reissue: .post
+        }
+    }
+    var headers:HTTPHeaders{
+        var headers = HTTPHeaders()
+        switch self{
+        case .signIn,.signUp:
+            headers["accept"] = "application/json;charset=UTF-8"
+            headers["Content-Type"] = "application/json;charset=UTF-8"
+        case .user: break
+        case .reissue(accessToken: let accessToken, _ ):
+            headers["Content-Type"] = "application/json;charset=UTF-8"
+            headers["Authorization"] = accessToken
+        }
+        return headers
+    }
+    var params: Parameters{
+        var params = Parameters()
+        switch self{
+        case .user: break
+        case .signIn(let email,let pw):
+            params["email"] = email
+            params["password"] = pw
+        case .signUp(let email,let pw, let birthDate):
+            params["email"] = email
+            params["password"] = pw
+            let date = birthDate.yyyyMMdd
+            params["birthDate"] = date
+        case .reissue(refreshToken: let refreshToken):
+            params["refreshToken"] = refreshToken
+        }
+        return params
+    }
     
     func asURLRequest() throws -> URLRequest {
         
+        guard var url = Self.baseURL else { return URLRequest(url: URL(string: "www.naver.com")!) }
+        if endPath != "" { url = url.appendingPathComponent(endPath) }
+        print(url)
+        var request = URLRequest(url: url)
+        request.method = method
+        request.headers = headers
+        switch method{
+        case .post:
+            request.httpBody = try? JSONEncoding.default.encode(request, with: params).httpBody
+        default: break
+        }
+        print(request.httpBody?.count)
+        return request
     }
 }
