@@ -38,7 +38,9 @@ struct SettingView: View {
                 .font(.system(size: 20))
                 .padding(.trailing, 24)
                 .onTapGesture {
+
                     // 설정 이동
+
                 }
         }
     }
@@ -46,6 +48,7 @@ struct SettingView: View {
 
 struct WishListView: View {
     var body: some View {
+
         ZStack {
             Color.gray150
                 .ignoresSafeArea()
@@ -127,7 +130,7 @@ struct FoodWishView: View {
                 Image(systemName: "plus")
                     .font(.system(size: 12))
                     .foregroundColor(.white)
-                
+
                 Text("Add")
                     .font(.Body.body2)
                     .foregroundColor(.white)
@@ -143,7 +146,9 @@ struct FoodWishView: View {
 }
 
 struct WishRow: View {
+
     @State private var heartCount: Int = 0
+
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 12) {
@@ -167,7 +172,11 @@ struct WishRow: View {
                 
                 Text("Consume Frequently")
                     .font(.Alert.alert)
+
                     .foregroundColor(.white)
+
+                    . foregroundColor(.white)
+
                     .padding(.vertical, 4)
                     .padding(.horizontal, 5)
                     .background(Color.darkMint)
@@ -180,11 +189,17 @@ struct WishRow: View {
                     .font(.system(size: 24))
                     .foregroundColor(.customPink)
                     .onTapGesture {
+
                         heartCount += 1
                         let generator = UIImpactFeedbackGenerator(style: .medium)
                         generator.impactOccurred()
                     }
                 Text("\(heartCount)")
+
+                        
+                    }
+                Text("0")
+
                     .font(.system(size: 24))
             }
         }
@@ -197,6 +212,7 @@ struct WishRow: View {
         .padding(.bottom, 12)
     }
 }
+
 
 struct EmptyRowView: View {
     var body: some View {
@@ -224,11 +240,13 @@ struct EmptyRowView: View {
 
 
 
+
 struct MyBabyView: View {
     var body: some View {
         ZStack {
             Color.gray150
                 .ignoresSafeArea()
+
             ScrollView{
                 VStack(spacing: 0) {
                     BabyDayView()
@@ -332,7 +350,7 @@ struct NotEatRow: View {
 }
 
 
+
 #Preview {
     MainView()
-//    EmptyRowView()
 }

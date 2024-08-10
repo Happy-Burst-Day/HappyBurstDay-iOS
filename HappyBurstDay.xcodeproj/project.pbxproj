@@ -36,6 +36,12 @@
 		DFAB188E2C67C722007D2765 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB188D2C67C722007D2765 /* SearchModel.swift */; };
 		DFB1695F2C67CE7B0012701F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */; };
 
+
+		DFB169622C67EC460012701F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB169612C67EC460012701F /* MainView.swift */; };
+		DFB169642C67F2BC0012701F /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB169632C67F2BC0012701F /* CustomTabView.swift */; };
+		DFEB63E52C67F36800A4D1AE /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */; };
+
+
 		DFB169622C67EC460012701F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB169612C67EC460012701F /* MainView.swift */; };
 		DFB169642C67F2BC0012701F /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB169632C67F2BC0012701F /* CustomTabView.swift */; };
 		DFEB63E52C67F36800A4D1AE /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */; };
@@ -87,6 +93,7 @@
 		DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 
 
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,14 +127,17 @@
 			isa = PBXGroup;
 			children = (
 
+
 				F7B336022C68054F001F8FD3 /* Info.plist */,
 				DF4D8D712C663021005BAD8B /* ContentView.swift */,
 
+				DFEB63E62C67F9D300A4D1AE /* Info.plist */,
 
 				DFEB63E62C67F9D300A4D1AE /* Info.plist */,
 
 				DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */,
 				DFAB188A2C67A82A007D2765 /* SearchView.swift */,
+
 
 				DFB169612C67EC460012701F /* MainView.swift */,
 				DF1DBCD12C67F2FE0019DC04 /* Tab.swift */,
@@ -135,6 +145,13 @@
 				DFB169602C67EC330012701F /* ViewModel */,
 
 				DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */,
+
+				DFB169612C67EC460012701F /* MainView.swift */,
+				DF1DBCD12C67F2FE0019DC04 /* Tab.swift */,
+				DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */,
+				DFB169632C67F2BC0012701F /* CustomTabView.swift */,
+				DFB169602C67EC330012701F /* ViewModel */,
+
 				DFAB188C2C67C715007D2765 /* Model */,
 				DFAB18842C679C26007D2765 /* Helper */,
 				DFAB186F2C679BF6007D2765 /* Resource */,
@@ -222,11 +239,16 @@
 		DFB169602C67EC330012701F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+
 				DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */,
 				DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 
+
+				DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +348,10 @@
 				DFB169622C67EC460012701F /* MainView.swift in Sources */,
 
 				DFAB188B2C67A82A007D2765 /* SearchView.swift in Sources */,
+
+				DFB169622C67EC460012701F /* MainView.swift in Sources */,
+				DFAB188B2C67A82A007D2765 /* SearchView.swift in Sources */,
+				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
 				DFB169642C67F2BC0012701F /* CustomTabView.swift in Sources */,
 				DFEB63E52C67F36800A4D1AE /* WishListViewModel.swift in Sources */,
 				DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */,
