@@ -12,6 +12,16 @@
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
 		DF4D8D772C663022005BAD8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D762C663022005BAD8B /* Preview Assets.xcassets */; };
 		DF4D8D7E2C66312D005BAD8B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D7D2C66312D005BAD8B /* .gitignore */; };
+		DFAB187B2C679C1D007D2765 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18722C679C1C007D2765 /* Pretendard-Bold.ttf */; };
+		DFAB187C2C679C1D007D2765 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18732C679C1C007D2765 /* Pretendard-SemiBold.ttf */; };
+		DFAB187D2C679C1D007D2765 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18742C679C1D007D2765 /* Pretendard-Medium.ttf */; };
+		DFAB187E2C679C1D007D2765 /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18752C679C1D007D2765 /* Pretendard-ExtraLight.ttf */; };
+		DFAB187F2C679C1D007D2765 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18762C679C1D007D2765 /* Pretendard-ExtraBold.ttf */; };
+		DFAB18802C679C1D007D2765 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18772C679C1D007D2765 /* Pretendard-Black.ttf */; };
+		DFAB18812C679C1D007D2765 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18782C679C1D007D2765 /* Pretendard-Light.ttf */; };
+		DFAB18822C679C1D007D2765 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18792C679C1D007D2765 /* Pretendard-Regular.ttf */; };
+		DFAB18832C679C1D007D2765 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB187A2C679C1D007D2765 /* Pretendard-Thin.ttf */; };
+		DFAB18872C679C42007D2765 /* Helper+PretendardFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB18862C679C42007D2765 /* Helper+PretendardFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +30,17 @@
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF4D8D732C663022005BAD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF4D8D762C663022005BAD8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DF4D8D7D2C66312D005BAD8B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DF4D8D7D2C66312D005BAD8B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = HappyBurstDay/.gitignore; sourceTree = "<group>"; };
+		DFAB18722C679C1C007D2765 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		DFAB18732C679C1C007D2765 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		DFAB18742C679C1D007D2765 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		DFAB18752C679C1D007D2765 /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
+		DFAB18762C679C1D007D2765 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DFAB18772C679C1D007D2765 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		DFAB18782C679C1D007D2765 /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
+		DFAB18792C679C1D007D2765 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		DFAB187A2C679C1D007D2765 /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
+		DFAB18862C679C42007D2765 /* Helper+PretendardFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper+PretendardFont.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +57,7 @@
 		DF4D8D632C663021005BAD8B = {
 			isa = PBXGroup;
 			children = (
+				DF4D8D7D2C66312D005BAD8B /* .gitignore */,
 				DF4D8D6E2C663021005BAD8B /* HappyBurstDay */,
 				DF4D8D6D2C663021005BAD8B /* Products */,
 			);
@@ -53,10 +74,10 @@
 		DF4D8D6E2C663021005BAD8B /* HappyBurstDay */ = {
 			isa = PBXGroup;
 			children = (
-				DF4D8D7D2C66312D005BAD8B /* .gitignore */,
-				DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */,
 				DF4D8D712C663021005BAD8B /* ContentView.swift */,
-				DF4D8D732C663022005BAD8B /* Assets.xcassets */,
+				DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */,
+				DFAB18842C679C26007D2765 /* Helper */,
+				DFAB186F2C679BF6007D2765 /* Resource */,
 				DF4D8D752C663022005BAD8B /* Preview Content */,
 			);
 			path = HappyBurstDay;
@@ -68,6 +89,47 @@
 				DF4D8D762C663022005BAD8B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DFAB186F2C679BF6007D2765 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DFAB18702C679C06007D2765 /* Fonts */,
+				DF4D8D732C663022005BAD8B /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DFAB18702C679C06007D2765 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DFAB18712C679C0D007D2765 /* Pretendard */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DFAB18712C679C0D007D2765 /* Pretendard */ = {
+			isa = PBXGroup;
+			children = (
+				DFAB18772C679C1D007D2765 /* Pretendard-Black.ttf */,
+				DFAB18722C679C1C007D2765 /* Pretendard-Bold.ttf */,
+				DFAB18762C679C1D007D2765 /* Pretendard-ExtraBold.ttf */,
+				DFAB18752C679C1D007D2765 /* Pretendard-ExtraLight.ttf */,
+				DFAB18782C679C1D007D2765 /* Pretendard-Light.ttf */,
+				DFAB18742C679C1D007D2765 /* Pretendard-Medium.ttf */,
+				DFAB18792C679C1D007D2765 /* Pretendard-Regular.ttf */,
+				DFAB18732C679C1C007D2765 /* Pretendard-SemiBold.ttf */,
+				DFAB187A2C679C1D007D2765 /* Pretendard-Thin.ttf */,
+			);
+			path = Pretendard;
+			sourceTree = "<group>";
+		};
+		DFAB18842C679C26007D2765 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DFAB18862C679C42007D2765 /* Helper+PretendardFont.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +190,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFAB18832C679C1D007D2765 /* Pretendard-Thin.ttf in Resources */,
 				DF4D8D772C663022005BAD8B /* Preview Assets.xcassets in Resources */,
+				DFAB18822C679C1D007D2765 /* Pretendard-Regular.ttf in Resources */,
 				DF4D8D7E2C66312D005BAD8B /* .gitignore in Resources */,
+				DFAB187D2C679C1D007D2765 /* Pretendard-Medium.ttf in Resources */,
+				DFAB187C2C679C1D007D2765 /* Pretendard-SemiBold.ttf in Resources */,
+				DFAB187E2C679C1D007D2765 /* Pretendard-ExtraLight.ttf in Resources */,
+				DFAB187B2C679C1D007D2765 /* Pretendard-Bold.ttf in Resources */,
 				DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */,
+				DFAB187F2C679C1D007D2765 /* Pretendard-ExtraBold.ttf in Resources */,
+				DFAB18812C679C1D007D2765 /* Pretendard-Light.ttf in Resources */,
+				DFAB18802C679C1D007D2765 /* Pretendard-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +214,7 @@
 			files = (
 				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
 				DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */,
+				DFAB18872C679C42007D2765 /* Helper+PretendardFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
