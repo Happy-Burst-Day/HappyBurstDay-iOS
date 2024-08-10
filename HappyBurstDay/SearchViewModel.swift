@@ -9,6 +9,7 @@ import Foundation
 class SearchViewModel: ObservableObject {
     
 //    @Published var searchModels: [SearchModel] = []
+    @Published var selectedIndices: Set<Int> = []
     @Published var searchModels: [SearchModel] = dummyData
     
     //api 통신해서 searchModels에 저장
@@ -50,6 +51,14 @@ class SearchViewModel: ObservableObject {
             return ["essential nutrients", "added over 100 people"]
         default:
             return [" "]
+        }
+    }
+    
+    func toggleSelection(for index: Int) {
+        if selectedIndices.contains(index) {
+            selectedIndices.remove(index)
+        } else {
+            selectedIndices.insert(index)
         }
     }
 }

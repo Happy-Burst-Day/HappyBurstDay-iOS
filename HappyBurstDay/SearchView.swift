@@ -11,7 +11,6 @@ struct SearchView: View {
     
     @StateObject private var viewModel = SearchViewModel()
     
-    @State private var isAddedToWishlist: Bool = false
     @State private var showSnackbar: Bool = false
     
     var body: some View {
@@ -19,30 +18,32 @@ struct SearchView: View {
             Color.gray100
                 .ignoresSafeArea()
             
-            VStack(spacing: 0) {
+            VStack {
                 SearchField()
-                    .padding(.bottom, 26)
+                    .padding(.bottom, 22)
                     .background(Color.white)
                 
-                ForEach(viewModel.searchModels.indices, id: \.self) { index in
-                    
-                    FoodRow(index: index)
-                        .padding(.vertical, 3)
-                        .environmentObject(viewModel)
-                    
+                ScrollView(showsIndicators: false) {
+                    ForEach(viewModel.searchModels.indices, id: \.self) { index in
+                        
+                        FoodRow(showSnackbar: $showSnackbar, index: index)
+                            .padding(.vertical, 3)
+                            .environmentObject(viewModel)
+                    }
                 }
                 
-                Spacer()
-                
-                if showSnackbar {
-                    Snackbar()
-                        .padding(.bottom, 44)
-                        .transition(.move(edge: .bottom))
-                }
             }
+            
+            if showSnackbar {
+                Snackbar()
+                    .padding(.top, 600)
+            }
+            
         }
+        
     }
 }
+
 
 
 struct SearchField: View {
@@ -58,7 +59,7 @@ struct SearchField: View {
                     .padding(.leading, 10)
                     .foregroundColor(.gray600)
                 
-                TextField("음식을 검색하세요", text: $searchText, onCommit: performSearch)
+                TextField("Search the food", text: $searchText, onCommit: performSearch)
                     .foregroundColor(.gray600)
                 
                 if !searchText.isEmpty {
@@ -77,14 +78,14 @@ struct SearchField: View {
             .cornerRadius(12)
             .padding(.trailing, 20)
         }
+        .padding(.top, 10)
     }
 }
 
 struct FoodRow: View {
     @EnvironmentObject var viewModel: SearchViewModel
     
-    @State private var isAddedToWishlist: Bool = false
-    @State private var showSnackbar: Bool = false
+    @Binding var showSnackbar: Bool
     
     var index: Int
     var body: some View {
@@ -141,10 +142,10 @@ struct FoodRow: View {
                 
                 Spacer()
                 
-                Image(isAddedToWishlist ? "icon_check" : "icon_plus")
+                Image(viewModel.selectedIndices.contains(index) ? "icon_check" : "icon_plus")
                     .onTapGesture {
-                        isAddedToWishlist.toggle()
-                        showSnackbar.toggle()
+                        viewModel.toggleSelection(for: index)
+                        showSnackbar = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             showSnackbar = false
                         }
@@ -160,7 +161,7 @@ struct Snackbar: View {
         HStack(spacing: 8) {
             Image(.iconWishcheck)
             
-            Text("위시리스트에 추가되었어요!")
+            Text("Added to your wishlist!")
                 .font(.Alert.alert)
                 .foregroundColor(.white)
         }
