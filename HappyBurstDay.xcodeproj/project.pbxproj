@@ -11,7 +11,6 @@
 		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
 		DF4D8D772C663022005BAD8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D762C663022005BAD8B /* Preview Assets.xcassets */; };
-		DF4D8D7E2C66312D005BAD8B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D7D2C66312D005BAD8B /* .gitignore */; };
 		DFAB187B2C679C1D007D2765 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18722C679C1C007D2765 /* Pretendard-Bold.ttf */; };
 		DFAB187C2C679C1D007D2765 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18732C679C1C007D2765 /* Pretendard-SemiBold.ttf */; };
 		DFAB187D2C679C1D007D2765 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18742C679C1D007D2765 /* Pretendard-Medium.ttf */; };
@@ -30,7 +29,6 @@
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF4D8D732C663022005BAD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF4D8D762C663022005BAD8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DF4D8D7D2C66312D005BAD8B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; name = .gitignore; path = HappyBurstDay/.gitignore; sourceTree = "<group>"; };
 		DFAB18722C679C1C007D2765 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
 		DFAB18732C679C1C007D2765 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
 		DFAB18742C679C1D007D2765 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 		DF4D8D632C663021005BAD8B = {
 			isa = PBXGroup;
 			children = (
-				DF4D8D7D2C66312D005BAD8B /* .gitignore */,
 				DF4D8D6E2C663021005BAD8B /* HappyBurstDay */,
 				DF4D8D6D2C663021005BAD8B /* Products */,
 			);
@@ -193,7 +190,6 @@
 				DFAB18832C679C1D007D2765 /* Pretendard-Thin.ttf in Resources */,
 				DF4D8D772C663022005BAD8B /* Preview Assets.xcassets in Resources */,
 				DFAB18822C679C1D007D2765 /* Pretendard-Regular.ttf in Resources */,
-				DF4D8D7E2C66312D005BAD8B /* .gitignore in Resources */,
 				DFAB187D2C679C1D007D2765 /* Pretendard-Medium.ttf in Resources */,
 				DFAB187C2C679C1D007D2765 /* Pretendard-SemiBold.ttf in Resources */,
 				DFAB187E2C679C1D007D2765 /* Pretendard-ExtraLight.ttf in Resources */,
