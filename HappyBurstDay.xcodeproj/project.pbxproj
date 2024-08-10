@@ -30,6 +30,8 @@
 		F7B335FE2C6804A6001F8FD3 /* SUIT-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7B335F52C6804A6001F8FD3 /* SUIT-SemiBold.otf */; };
 		F7B335FF2C6804A6001F8FD3 /* SUIT-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7B335F62C6804A6001F8FD3 /* SUIT-Thin.otf */; };
 		F7B336002C6804A6001F8FD3 /* SUIT-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F7B335F72C6804A6001F8FD3 /* SUIT-Medium.otf */; };
+
+		DFAB18892C67A77D007D2765 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18882C67A77D007D2765 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,9 @@
 		F7B335F62C6804A6001F8FD3 /* SUIT-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Thin.otf"; sourceTree = "<group>"; };
 		F7B335F72C6804A6001F8FD3 /* SUIT-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Medium.otf"; sourceTree = "<group>"; };
 		F7B336022C68054F001F8FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+
+		DFAB18882C67A77D007D2765 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,7 @@
 			children = (
 				DFAB18702C679C06007D2765 /* Fonts */,
 				DF4D8D732C663022005BAD8B /* Assets.xcassets */,
+				DFAB18882C67A77D007D2765 /* Colors.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -233,7 +239,11 @@
 				DFAB187D2C679C1D007D2765 /* Pretendard-Medium.ttf in Resources */,
 				F7B335FC2C6804A6001F8FD3 /* SUIT-Bold.otf in Resources */,
 				DFAB187C2C679C1D007D2765 /* Pretendard-SemiBold.ttf in Resources */,
+
 				F7B335FD2C6804A6001F8FD3 /* SUIT-Light.otf in Resources */,
+
+				DFAB18892C67A77D007D2765 /* Colors.xcassets in Resources */,
+
 				DFAB187E2C679C1D007D2765 /* Pretendard-ExtraLight.ttf in Resources */,
 				DFAB187B2C679C1D007D2765 /* Pretendard-Bold.ttf in Resources */,
 				DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */,
