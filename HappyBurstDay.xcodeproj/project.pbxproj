@@ -39,6 +39,7 @@
 		634195912C68148900ADC9AB /* ResponseWishlistDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195902C68148900ADC9AB /* ResponseWishlistDto.swift */; };
 		634195932C681FB400ADC9AB /* FoodRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195922C681FB400ADC9AB /* FoodRouter.swift */; };
 		634195952C68234E00ADC9AB /* FoodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195942C68234E00ADC9AB /* FoodManager.swift */; };
+		634195982C682B7C00ADC9AB /* BirthDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195972C682B7C00ADC9AB /* BirthDateView.swift */; };
 		DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */; };
 		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		634195902C68148900ADC9AB /* ResponseWishlistDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseWishlistDto.swift; sourceTree = "<group>"; };
 		634195922C681FB400ADC9AB /* FoodRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRouter.swift; sourceTree = "<group>"; };
 		634195942C68234E00ADC9AB /* FoodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodManager.swift; sourceTree = "<group>"; };
+		634195972C682B7C00ADC9AB /* BirthDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateView.swift; sourceTree = "<group>"; };
 		DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBurstDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBurstDayApp.swift; sourceTree = "<group>"; };
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		634195502C67A84200ADC9AB /* GreemViews */ = {
 			isa = PBXGroup;
 			children = (
+				634195962C682B7200ADC9AB /* BirthDateViw */,
 				6341957B2C67F72B00ADC9AB /* SignInView */,
 				634195702C67D48E00ADC9AB /* SignUpView */,
 				634195692C67CD8E00ADC9AB /* SignView.swift */,
@@ -230,6 +233,14 @@
 				634195772C67E15400ADC9AB /* AuthInterceptor.swift */,
 			);
 			path = NetworkManagers;
+			sourceTree = "<group>";
+		};
+		634195962C682B7200ADC9AB /* BirthDateViw */ = {
+			isa = PBXGroup;
+			children = (
+				634195972C682B7C00ADC9AB /* BirthDateView.swift */,
+			);
+			path = BirthDateViw;
 			sourceTree = "<group>";
 		};
 		DF4D8D632C663021005BAD8B = {
@@ -404,6 +415,7 @@
 				634195522C67A84B00ADC9AB /* SignInView.swift in Sources */,
 				6341955A2C67B71A00ADC9AB /* API_Key.swift in Sources */,
 				6341958D2C68130500ADC9AB /* WishlistManager.swift in Sources */,
+				634195982C682B7C00ADC9AB /* BirthDateView.swift in Sources */,
 				634195842C68126E00ADC9AB /* WishlistItemDto.swift in Sources */,
 				6341958A2C6812AD00ADC9AB /* ResponseWishlistRankingDto.swift in Sources */,
 				634195492C67A6D300ADC9AB /* NetworkManager.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 enum SignPath{
     case signUp
     case signIn
+    case birthDate
 }
 struct SignView: View {
     @State var pathes: [SignPath] = []
@@ -39,6 +40,7 @@ struct SignView: View {
                 switch path{
                 case .signIn: SignInView()
                 case .signUp: SignUpView()
+                case .birthDate: BirthDateView()
                 }
             }
         }
