@@ -29,6 +29,14 @@
 		634195782C67E15400ADC9AB /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195772C67E15400ADC9AB /* AuthInterceptor.swift */; };
 		6341957A2C67ED4200ADC9AB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195792C67ED4200ADC9AB /* DateExtension.swift */; };
 		6341957D2C6803CA00ADC9AB /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341957C2C6803CA00ADC9AB /* UserDto.swift */; };
+		6341957F2C680E6200ADC9AB /* WishRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341957E2C680E6200ADC9AB /* WishRouter.swift */; };
+		634195842C68126E00ADC9AB /* WishlistItemDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195832C68126E00ADC9AB /* WishlistItemDto.swift */; };
+		634195862C68127E00ADC9AB /* FoodDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195852C68127E00ADC9AB /* FoodDto.swift */; };
+		634195882C68128900ADC9AB /* FoodDiseaseWarning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195872C68128900ADC9AB /* FoodDiseaseWarning.swift */; };
+		6341958A2C6812AD00ADC9AB /* ResponseWishlistRankingDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195892C6812AD00ADC9AB /* ResponseWishlistRankingDto.swift */; };
+		6341958D2C68130500ADC9AB /* WishlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341958C2C68130500ADC9AB /* WishlistManager.swift */; };
+		6341958F2C68131C00ADC9AB /* UserDefaultsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341958E2C68131C00ADC9AB /* UserDefaultsValues.swift */; };
+		634195912C68148900ADC9AB /* ResponseWishlistDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195902C68148900ADC9AB /* ResponseWishlistDto.swift */; };
 		DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */; };
 		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
@@ -67,6 +75,14 @@
 		634195772C67E15400ADC9AB /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		634195792C67ED4200ADC9AB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		6341957C2C6803CA00ADC9AB /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
+		6341957E2C680E6200ADC9AB /* WishRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishRouter.swift; sourceTree = "<group>"; };
+		634195832C68126E00ADC9AB /* WishlistItemDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistItemDto.swift; sourceTree = "<group>"; };
+		634195852C68127E00ADC9AB /* FoodDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDto.swift; sourceTree = "<group>"; };
+		634195872C68128900ADC9AB /* FoodDiseaseWarning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDiseaseWarning.swift; sourceTree = "<group>"; };
+		634195892C6812AD00ADC9AB /* ResponseWishlistRankingDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseWishlistRankingDto.swift; sourceTree = "<group>"; };
+		6341958C2C68130500ADC9AB /* WishlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistManager.swift; sourceTree = "<group>"; };
+		6341958E2C68131C00ADC9AB /* UserDefaultsValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsValues.swift; sourceTree = "<group>"; };
+		634195902C68148900ADC9AB /* ResponseWishlistDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseWishlistDto.swift; sourceTree = "<group>"; };
 		DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBurstDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBurstDayApp.swift; sourceTree = "<group>"; };
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,12 +128,9 @@
 		6341954F2C67A83800ADC9AB /* Networks */ = {
 			isa = PBXGroup;
 			children = (
+				6341958B2C6812F700ADC9AB /* NetworkManagers */,
 				6341955E2C67BFC700ADC9AB /* NetworkModels */,
 				634195532C67A99B00ADC9AB /* Routers */,
-				634195482C67A6D300ADC9AB /* NetworkManager.swift */,
-				6341954D2C67A7FD00ADC9AB /* AuthManager.swift */,
-				634195562C67AA7400ADC9AB /* NetworkErrors.swift */,
-				634195772C67E15400ADC9AB /* AuthInterceptor.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -136,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				634195542C67A9A300ADC9AB /* AuthRouter.swift */,
+				6341957E2C680E6200ADC9AB /* WishRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -153,6 +167,7 @@
 		6341955E2C67BFC700ADC9AB /* NetworkModels */ = {
 			isa = PBXGroup;
 			children = (
+				634195822C68126000ADC9AB /* WishlistDtos */,
 				634195612C67C86F00ADC9AB /* SignUpDto.swift */,
 				634195632C67C89000ADC9AB /* SignInDto.swift */,
 				634195652C67C8B100ADC9AB /* ReissueDto.swift */,
@@ -185,6 +200,30 @@
 				634195512C67A84B00ADC9AB /* SignInView.swift */,
 			);
 			path = SignInView;
+			sourceTree = "<group>";
+		};
+		634195822C68126000ADC9AB /* WishlistDtos */ = {
+			isa = PBXGroup;
+			children = (
+				634195832C68126E00ADC9AB /* WishlistItemDto.swift */,
+				634195872C68128900ADC9AB /* FoodDiseaseWarning.swift */,
+				634195852C68127E00ADC9AB /* FoodDto.swift */,
+				634195892C6812AD00ADC9AB /* ResponseWishlistRankingDto.swift */,
+				634195902C68148900ADC9AB /* ResponseWishlistDto.swift */,
+			);
+			path = WishlistDtos;
+			sourceTree = "<group>";
+		};
+		6341958B2C6812F700ADC9AB /* NetworkManagers */ = {
+			isa = PBXGroup;
+			children = (
+				634195482C67A6D300ADC9AB /* NetworkManager.swift */,
+				6341958C2C68130500ADC9AB /* WishlistManager.swift */,
+				6341954D2C67A7FD00ADC9AB /* AuthManager.swift */,
+				634195562C67AA7400ADC9AB /* NetworkErrors.swift */,
+				634195772C67E15400ADC9AB /* AuthInterceptor.swift */,
+			);
+			path = NetworkManagers;
 			sourceTree = "<group>";
 		};
 		DF4D8D632C663021005BAD8B = {
@@ -263,6 +302,7 @@
 			children = (
 				DFAB18862C679C42007D2765 /* Helper+PretendardFont.swift */,
 				634195792C67ED4200ADC9AB /* DateExtension.swift */,
+				6341958E2C68131C00ADC9AB /* UserDefaultsValues.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -357,9 +397,13 @@
 				6341956E2C67D02400ADC9AB /* NavigationEnvironments.swift in Sources */,
 				634195522C67A84B00ADC9AB /* SignInView.swift in Sources */,
 				6341955A2C67B71A00ADC9AB /* API_Key.swift in Sources */,
+				6341958D2C68130500ADC9AB /* WishlistManager.swift in Sources */,
+				634195842C68126E00ADC9AB /* WishlistItemDto.swift in Sources */,
+				6341958A2C6812AD00ADC9AB /* ResponseWishlistRankingDto.swift in Sources */,
 				634195492C67A6D300ADC9AB /* NetworkManager.swift in Sources */,
 				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
 				6341955D2C67B89500ADC9AB /* SignInVM.swift in Sources */,
+				634195882C68128900ADC9AB /* FoodDiseaseWarning.swift in Sources */,
 				634195642C67C89000ADC9AB /* SignInDto.swift in Sources */,
 				6341956A2C67CD8E00ADC9AB /* SignView.swift in Sources */,
 				634195552C67A9A300ADC9AB /* AuthRouter.swift in Sources */,
@@ -372,11 +416,15 @@
 				634195782C67E15400ADC9AB /* AuthInterceptor.swift in Sources */,
 				DFAB18872C679C42007D2765 /* Helper+PretendardFont.swift in Sources */,
 				6341957A2C67ED4200ADC9AB /* DateExtension.swift in Sources */,
+				6341958F2C68131C00ADC9AB /* UserDefaultsValues.swift in Sources */,
 				634195722C67D4A100ADC9AB /* SignUpEmailCPT.swift in Sources */,
 				6341954E2C67A7FD00ADC9AB /* AuthManager.swift in Sources */,
 				634195762C67DC8900ADC9AB /* SignUpVM.swift in Sources */,
+				634195862C68127E00ADC9AB /* FoodDto.swift in Sources */,
+				634195912C68148900ADC9AB /* ResponseWishlistDto.swift in Sources */,
 				6341957D2C6803CA00ADC9AB /* UserDto.swift in Sources */,
 				634195742C67D53100ADC9AB /* SingUpPasswordCPT.swift in Sources */,
+				6341957F2C680E6200ADC9AB /* WishRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
