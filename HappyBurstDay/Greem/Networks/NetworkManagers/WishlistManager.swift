@@ -44,7 +44,9 @@ extension NetworkManager{
         func appendItem(id: Int) async throws -> WishlistItemDto{
             let router = WishRouter.append(foodID: id)
             return try await withCheckedThrowingContinuation { continuation in
-                AF.request(router,interceptor: delegate.baseInterceptor).response { res in
+                AF.request(router,interceptor: delegate.baseInterceptor)
+                    .validate(statusCode: 200..<300)
+                    .response { res in
                     switch res.result{
                     case .success(let data):
                         guard let data else { 
@@ -69,7 +71,9 @@ extension NetworkManager{
             let router = WishRouter.delete(id: id)
             return try await withCheckedThrowingContinuation {[weak self] continuation in
                 guard let self else {return}
-                AF.request(router, interceptor: delegate.baseInterceptor).response { res in
+                AF.request(router, interceptor: delegate.baseInterceptor)
+                    .validate(statusCode: 200..<300)
+                    .response { res in
                     switch res.result{
                     case .success(let data):
                         if data == nil{
@@ -88,7 +92,9 @@ extension NetworkManager{
         func likeOne(id:Int) async throws -> WishlistItemDto{
             let router = WishRouter.likeOne(id: id)
             return try await withCheckedThrowingContinuation { contiuation in
-                AF.request(router, interceptor: delegate.baseInterceptor).response {[weak self] res in
+                AF.request(router, interceptor: delegate.baseInterceptor)
+                    .validate(statusCode: 200..<300)
+                    .response {[weak self] res in
                     guard let self else { return }
                     switch res.result{
                     case .success(let data):
@@ -112,7 +118,9 @@ extension NetworkManager{
             let router = WishRouter.topThree
             return try await withCheckedThrowingContinuation {[weak self] contination in
                 guard let self else {return}
-                AF.request(router,interceptor: delegate.baseInterceptor).response { res in
+                AF.request(router,interceptor: delegate.baseInterceptor)
+                    .validate(statusCode: 200..<300)
+                    .response { res in
                     switch res.result{
                     case .success(let data):
                         guard let data else { contination.resume(throwing: NetworkErrors.reissueError); return }

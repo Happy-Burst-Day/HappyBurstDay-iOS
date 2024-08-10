@@ -124,5 +124,27 @@ extension NetworkManager{
                 }
             }
         }
+        func changeChildBirth(date:Date) async throws -> UserDto{
+            let router = AuthRouter.changeChildbirth(date: date)
+            return try await withCheckedThrowingContinuation { continuation in
+                AF.request(router,interceptor: delegate.baseInterceptor).response{ res in
+                    switch res.result{
+                    case .success(let data):
+                        guard let data else {
+                            continuation.resume(throwing: NetworkErrors.loginAccessError)
+                            return
+                        }
+                        do{
+                            let userDto = try JSONDecoder().decode(UserDto.self, from: data)
+                            continuation.resume(returning: userDto)
+                        }catch{
+                            continuation.resume(throwing: error)
+                        }
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    }
+                }
+            }
+        }
     }
 }

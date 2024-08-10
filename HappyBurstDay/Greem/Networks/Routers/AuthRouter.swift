@@ -15,11 +15,13 @@ enum AuthRouter: URLRequestConvertible{
     case signUp(email:String,pw:String,birthDate:Date)
     case signIn(email:String,pw:String)
     case reissue(accessToken:String, refreshToken: String)
+    case changeChildbirth(date:Date)
     var endPath: String{
         switch self{
         case .signIn: "/login"
         case .signUp,.user: ""
         case .reissue: "/reissue"
+        case .changeChildbirth: "/birthdate"
         }
     }
     
@@ -27,6 +29,7 @@ enum AuthRouter: URLRequestConvertible{
         switch self{
         case .user: .get
         case .signUp,.signIn,.reissue: .post
+        case .changeChildbirth:.patch
         }
     }
     var headers:HTTPHeaders{
@@ -40,6 +43,9 @@ enum AuthRouter: URLRequestConvertible{
             headers["Content-Type"] = "application/json;charset=UTF-8"
             headers["accept"] = "application/json;charset=UTF-8"
             headers["Authorization"] = "Bearer \(accessToken)"
+        case .changeChildbirth:
+            headers["Content-Type"] = "application/json;charset=UTF-8"
+            headers["accept"] = "application/json;charset=UTF-8"
         }
         return headers
     }
@@ -57,12 +63,13 @@ enum AuthRouter: URLRequestConvertible{
             params["birthDate"] = date
         case .reissue(refreshToken: let refreshToken):
             params["refreshToken"] = refreshToken
+        case .changeChildbirth(date: let date):
+            params["birthDate"] = date.yyyyMMdd
         }
         return params
     }
     
     func asURLRequest() throws -> URLRequest {
-        
         guard var url = Self.baseURL else { return URLRequest(url: URL(string: "www.naver.com")!) }
         if endPath != "" { url = url.appendingPathComponent(endPath) }
         print(url)

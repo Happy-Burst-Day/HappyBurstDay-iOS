@@ -37,6 +37,8 @@
 		6341958D2C68130500ADC9AB /* WishlistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341958C2C68130500ADC9AB /* WishlistManager.swift */; };
 		6341958F2C68131C00ADC9AB /* UserDefaultsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341958E2C68131C00ADC9AB /* UserDefaultsValues.swift */; };
 		634195912C68148900ADC9AB /* ResponseWishlistDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195902C68148900ADC9AB /* ResponseWishlistDto.swift */; };
+		634195932C681FB400ADC9AB /* FoodRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195922C681FB400ADC9AB /* FoodRouter.swift */; };
+		634195952C68234E00ADC9AB /* FoodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195942C68234E00ADC9AB /* FoodManager.swift */; };
 		DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */; };
 		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
@@ -83,6 +85,8 @@
 		6341958C2C68130500ADC9AB /* WishlistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistManager.swift; sourceTree = "<group>"; };
 		6341958E2C68131C00ADC9AB /* UserDefaultsValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsValues.swift; sourceTree = "<group>"; };
 		634195902C68148900ADC9AB /* ResponseWishlistDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseWishlistDto.swift; sourceTree = "<group>"; };
+		634195922C681FB400ADC9AB /* FoodRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRouter.swift; sourceTree = "<group>"; };
+		634195942C68234E00ADC9AB /* FoodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodManager.swift; sourceTree = "<group>"; };
 		DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBurstDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBurstDayApp.swift; sourceTree = "<group>"; };
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			children = (
 				634195542C67A9A300ADC9AB /* AuthRouter.swift */,
 				6341957E2C680E6200ADC9AB /* WishRouter.swift */,
+				634195922C681FB400ADC9AB /* FoodRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				634195482C67A6D300ADC9AB /* NetworkManager.swift */,
 				6341958C2C68130500ADC9AB /* WishlistManager.swift */,
 				6341954D2C67A7FD00ADC9AB /* AuthManager.swift */,
+				634195942C68234E00ADC9AB /* FoodManager.swift */,
 				634195562C67AA7400ADC9AB /* NetworkErrors.swift */,
 				634195772C67E15400ADC9AB /* AuthInterceptor.swift */,
 			);
@@ -414,11 +420,13 @@
 				634195682C67CD4E00ADC9AB /* SignUpView.swift in Sources */,
 				634195622C67C86F00ADC9AB /* SignUpDto.swift in Sources */,
 				634195782C67E15400ADC9AB /* AuthInterceptor.swift in Sources */,
+				634195932C681FB400ADC9AB /* FoodRouter.swift in Sources */,
 				DFAB18872C679C42007D2765 /* Helper+PretendardFont.swift in Sources */,
 				6341957A2C67ED4200ADC9AB /* DateExtension.swift in Sources */,
 				6341958F2C68131C00ADC9AB /* UserDefaultsValues.swift in Sources */,
 				634195722C67D4A100ADC9AB /* SignUpEmailCPT.swift in Sources */,
 				6341954E2C67A7FD00ADC9AB /* AuthManager.swift in Sources */,
+				634195952C68234E00ADC9AB /* FoodManager.swift in Sources */,
 				634195762C67DC8900ADC9AB /* SignUpVM.swift in Sources */,
 				634195862C68127E00ADC9AB /* FoodDto.swift in Sources */,
 				634195912C68148900ADC9AB /* ResponseWishlistDto.swift in Sources */,
