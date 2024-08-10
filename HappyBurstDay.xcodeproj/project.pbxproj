@@ -148,7 +148,6 @@
 
 				DFB169612C67EC460012701F /* MainView.swift */,
 				DF1DBCD12C67F2FE0019DC04 /* Tab.swift */,
-				DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */,
 				DFB169632C67F2BC0012701F /* CustomTabView.swift */,
 				DFB169602C67EC330012701F /* ViewModel */,
 
@@ -240,11 +239,15 @@
 			isa = PBXGroup;
 			children = (
 
+
 				DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */,
 				DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 
+
+
+				DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */,
 
 				DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */,
 			);
@@ -351,7 +354,6 @@
 
 				DFB169622C67EC460012701F /* MainView.swift in Sources */,
 				DFAB188B2C67A82A007D2765 /* SearchView.swift in Sources */,
-				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
 				DFB169642C67F2BC0012701F /* CustomTabView.swift in Sources */,
 				DFEB63E52C67F36800A4D1AE /* WishListViewModel.swift in Sources */,
 				DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */,
