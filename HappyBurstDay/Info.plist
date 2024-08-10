@@ -4,7 +4,24 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 176112f (컨플릭 해결)
+		<string>SUIT-Thin.otf</string>
+		<string>SUIT-ExtraLight.otf</string>
+		<string>SUIT-Light.otf</string>
+		<string>SUIT-Regular.otf</string>
+		<string>SUIT-Medium.otf</string>
+		<string>SUIT-Bold.otf</string>
+		<string>SUIT-SemiBold.otf</string>
+		<string>SUIT-ExtraBold.otf</string>
+		<string>SUIT-Heavy.otf</string>
+=======
+>>>>>>> 0707426 (컨플릭 해결)
 		<string>Pretendard-Black.ttf</string>
 		<string>Pretendard-Bold.ttf</string>
 		<string>Pretendard-ExtraBold.ttf</string>
