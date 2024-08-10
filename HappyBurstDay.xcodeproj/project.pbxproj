@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DF1DBCD22C67F2FE0019DC04 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1DBCD12C67F2FE0019DC04 /* Tab.swift */; };
 		DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */; };
-		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
 		DF4D8D772C663022005BAD8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D762C663022005BAD8B /* Preview Assets.xcassets */; };
 		DFAB187B2C679C1D007D2765 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18722C679C1C007D2765 /* Pretendard-Bold.ttf */; };
@@ -45,7 +44,6 @@
 		DF1DBCD12C67F2FE0019DC04 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBurstDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBurstDayApp.swift; sourceTree = "<group>"; };
-		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DF4D8D732C663022005BAD8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF4D8D762C663022005BAD8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFAB18722C679C1C007D2765 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
@@ -124,11 +122,9 @@
 				DFEB63E62C67F9D300A4D1AE /* Info.plist */,
 >>>>>>> 5ff5306 ([FEAT] WishListView UI 구현)
 				DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */,
-				DF4D8D712C663021005BAD8B /* ContentView.swift */,
 				DFAB188A2C67A82A007D2765 /* SearchView.swift */,
 				DFB169612C67EC460012701F /* MainView.swift */,
 				DF1DBCD12C67F2FE0019DC04 /* Tab.swift */,
-				DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */,
 				DFB169632C67F2BC0012701F /* CustomTabView.swift */,
 				DFB169602C67EC330012701F /* ViewModel */,
 				DFAB188C2C67C715007D2765 /* Model */,
@@ -218,6 +214,7 @@
 		DFB169602C67EC330012701F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DFEB63E42C67F36800A4D1AE /* WishListViewModel.swift */,
 				DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
@@ -318,7 +315,6 @@
 				DFB1695F2C67CE7B0012701F /* SearchViewModel.swift in Sources */,
 				DFB169622C67EC460012701F /* MainView.swift in Sources */,
 				DFAB188B2C67A82A007D2765 /* SearchView.swift in Sources */,
-				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
 				DFB169642C67F2BC0012701F /* CustomTabView.swift in Sources */,
 				DFEB63E52C67F36800A4D1AE /* WishListViewModel.swift in Sources */,
 				DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */,

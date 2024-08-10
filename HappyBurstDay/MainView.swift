@@ -46,7 +46,6 @@ struct SettingView: View {
 
 struct WishListView: View {
     var body: some View {
-        
         ZStack {
             Color.gray150
                 .ignoresSafeArea()
@@ -128,6 +127,7 @@ struct FoodWishView: View {
                 Image(systemName: "plus")
                     .font(.system(size: 12))
                     .foregroundColor(.white)
+                
                 Text("Add")
                     .font(.Body.body2)
                     .foregroundColor(.white)
@@ -143,6 +143,7 @@ struct FoodWishView: View {
 }
 
 struct WishRow: View {
+    @State private var heartCount: Int = 0
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 12) {
@@ -179,9 +180,11 @@ struct WishRow: View {
                     .font(.system(size: 24))
                     .foregroundColor(.customPink)
                     .onTapGesture {
-                        // 하트 수 올라가게 해줭
+                        heartCount += 1
+                        let generator = UIImpactFeedbackGenerator(style: .medium)
+                        generator.impactOccurred()
                     }
-                Text("0")
+                Text("\(heartCount)")
                     .font(.system(size: 24))
             }
         }
@@ -192,6 +195,30 @@ struct WishRow: View {
         .padding(.leading, 16)
         .padding(.trailing, 18)
         .padding(.bottom, 12)
+    }
+}
+
+struct EmptyRowView: View {
+    var body: some View {
+        ZStack {
+            Color.gray150
+                .ignoresSafeArea()
+            
+            VStack(spacing: 0){
+                Image(systemName: "plus")
+                    .font(.system(size: 12))
+                    .foregroundColor(.white)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 11)
+                    .background(Color.customBlack)
+                    .cornerRadius(10)
+                    .padding(.bottom, 21)
+                
+                Text("Your Wish List is Empty.\nPlease add your wish food.")
+                    .font(.Alert.alert)
+                    .foregroundColor(.gray600)
+            }
+        }
     }
 }
 
@@ -248,6 +275,8 @@ struct NotEatListView: View {
 }
 
 struct NotEatRow: View {
+    @State private var heartEatCount: Int = 0
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 12) {
@@ -284,9 +313,11 @@ struct NotEatRow: View {
                     .font(.system(size: 24))
                     .foregroundColor(.customPink)
                     .onTapGesture {
-                        // 하트 수 올라가게 해줭
+                        heartEatCount += 1
+                        let generator = UIImpactFeedbackGenerator(style: .medium)
+                        generator.impactOccurred()
                     }
-                Text("0")
+                Text("\(heartEatCount)")
                     .font(.system(size: 24))
             }
         }
@@ -303,4 +334,5 @@ struct NotEatRow: View {
 
 #Preview {
     MainView()
+//    EmptyRowView()
 }
