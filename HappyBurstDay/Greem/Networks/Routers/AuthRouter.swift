@@ -38,7 +38,8 @@ enum AuthRouter: URLRequestConvertible{
         case .user: break
         case .reissue(accessToken: let accessToken, _ ):
             headers["Content-Type"] = "application/json;charset=UTF-8"
-            headers["Authorization"] = accessToken
+            headers["accept"] = "application/json;charset=UTF-8"
+            headers["Authorization"] = "Bearer \(accessToken)"
         }
         return headers
     }
@@ -73,7 +74,6 @@ enum AuthRouter: URLRequestConvertible{
             request.httpBody = try? JSONEncoding.default.encode(request, with: params).httpBody
         default: break
         }
-        print(request.httpBody?.count)
         return request
     }
 }

@@ -32,7 +32,10 @@ struct SignView: View {
                         Text("LogIn")
                     }).ignoresSafeArea(.container,edges: .bottom)
                 }
-            }.navigationDestination(for: SignPath.self) { path in
+            }.onAppear(){
+                print(Defaults.shared.accessToken)
+            }
+            .navigationDestination(for: SignPath.self) { path in
                 switch path{
                 case .signIn: SignInView()
                 case .signUp: SignUpView()

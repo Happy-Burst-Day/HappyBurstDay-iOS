@@ -52,6 +52,35 @@ extension NetworkManager{
         init(delegate: NetworkManagerDelegate){
             self.delegate = delegate
         }
+        
+        func check() async throws -> UserDto{
+            let router = AuthRouter.user
+            return try await withCheckedThrowingContinuation { [weak self] continuation in
+                guard let self else {return }
+                AF.request(router,interceptor: delegate.baseInterceptor)
+                    .validate(statusCode: 200..<300)
+                    .response {res in
+                    print(res.response?.statusCode)
+                    switch res.result{
+                    case .success(let data):
+                        guard let data else {
+                            continuation.resume(throwing: NetworkErrors.loginAccessError)
+                            return
+                        }
+                        do{
+                            let authDto = try JSONDecoder().decode(UserDto.self, from: data)
+                            continuation.resume(returning: authDto)
+                        }catch{
+                            continuation.resume(throwing: NetworkErrors.loginAccessError)
+                            return
+                        }
+                    case .failure(let error):
+                        continuation.resume(throwing: error)
+                    }
+                }
+            }
+        }
+        
         /// 회원가입
         func signUp(email:String,pw:String) async throws -> SignUpDto{
             let router = AuthRouter.signUp(email: email, pw: pw, birthDate: Date())
@@ -83,15 +112,26 @@ extension NetworkManager{
             
         }
         /// 로그인
-        func signIn() async throws{
-            let router = AuthRouter.signIn(email: "", pw: "")
+        func signIn(email:String,pw:String) async throws -> SignInDto{
+            let router = AuthRouter.signIn(email: email, pw: pw)
             return try await withCheckedThrowingContinuation{[weak self] continuation in
-                AF.request(router).response {[weak self] response in
+                AF.request(router)
+                    .validate(statusCode: 200..<300)
+                    .response {[weak self] response in
                     switch response.result{
                     case .success(let data):
+                        print(response.response?.statusCode)
                         guard let data else {
                             continuation.resume(throwing: NetworkErrors.loginAccessError)
                             return
+                        }
+                        do{
+                            let signInDto = try JSONDecoder().decode(SignInDto.self, from: data)
+                            Defaults.shared.accessToken = signInDto.accessToken
+                            Defaults.shared.expiration = Date()
+                            continuation.resume(returning: signInDto)
+                        }catch{
+                            continuation.resume(throwing: NetworkErrors.loginAccessError)
                         }
                     case .failure(let error):
                         continuation.resume(throwing: NetworkErrors.loginAccessError)

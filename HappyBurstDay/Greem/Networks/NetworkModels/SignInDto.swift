@@ -7,6 +7,6 @@
 
 import Foundation
 struct SignInDto: Codable{
-    let email:String
-    let password:String
+    let accessToken:String
+    let refreshToken:String
 }

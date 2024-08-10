@@ -28,6 +28,7 @@
 		634195762C67DC8900ADC9AB /* SignUpVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195752C67DC8900ADC9AB /* SignUpVM.swift */; };
 		634195782C67E15400ADC9AB /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195772C67E15400ADC9AB /* AuthInterceptor.swift */; };
 		6341957A2C67ED4200ADC9AB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195792C67ED4200ADC9AB /* DateExtension.swift */; };
+		6341957D2C6803CA00ADC9AB /* UserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341957C2C6803CA00ADC9AB /* UserDto.swift */; };
 		DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */; };
 		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		634195752C67DC8900ADC9AB /* SignUpVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVM.swift; sourceTree = "<group>"; };
 		634195772C67E15400ADC9AB /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		634195792C67ED4200ADC9AB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		6341957C2C6803CA00ADC9AB /* UserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDto.swift; sourceTree = "<group>"; };
 		DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBurstDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBurstDayApp.swift; sourceTree = "<group>"; };
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,8 +125,8 @@
 		634195502C67A84200ADC9AB /* GreemViews */ = {
 			isa = PBXGroup;
 			children = (
+				6341957B2C67F72B00ADC9AB /* SignInView */,
 				634195702C67D48E00ADC9AB /* SignUpView */,
-				634195512C67A84B00ADC9AB /* SignInView.swift */,
 				634195692C67CD8E00ADC9AB /* SignView.swift */,
 			);
 			path = GreemViews;
@@ -154,6 +156,7 @@
 				634195612C67C86F00ADC9AB /* SignUpDto.swift */,
 				634195632C67C89000ADC9AB /* SignInDto.swift */,
 				634195652C67C8B100ADC9AB /* ReissueDto.swift */,
+				6341957C2C6803CA00ADC9AB /* UserDto.swift */,
 			);
 			path = NetworkModels;
 			sourceTree = "<group>";
@@ -174,6 +177,14 @@
 				634195732C67D53100ADC9AB /* SingUpPasswordCPT.swift */,
 			);
 			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		6341957B2C67F72B00ADC9AB /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				634195512C67A84B00ADC9AB /* SignInView.swift */,
+			);
+			path = SignInView;
 			sourceTree = "<group>";
 		};
 		DF4D8D632C663021005BAD8B = {
@@ -364,6 +375,7 @@
 				634195722C67D4A100ADC9AB /* SignUpEmailCPT.swift in Sources */,
 				6341954E2C67A7FD00ADC9AB /* AuthManager.swift in Sources */,
 				634195762C67DC8900ADC9AB /* SignUpVM.swift in Sources */,
+				6341957D2C6803CA00ADC9AB /* UserDto.swift in Sources */,
 				634195742C67D53100ADC9AB /* SingUpPasswordCPT.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
