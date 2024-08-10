@@ -27,4 +27,18 @@ extension Font {
     enum Alert {
         static let alert: Font = .custom("Pretendard-Regular", size: 12)
     }
+    
+    func pretendard(weight: PretendardFontWeight,size: CGFloat)-> Font{
+        .custom("Pretendard-\(weight.name)", size: size)
+    }
+    enum PretendardFontWeight:String {
+        case bold, medium,regular
+        var name:String{
+            switch self{
+            case .bold: "Bold"
+            case .medium: "Medium"
+            case .regular: "Regular"
+            }
+        }
+    }
 }

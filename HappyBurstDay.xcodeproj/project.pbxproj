@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		634195462C67A6B900ADC9AB /* GreemSwiftPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 634195452C67A6B900ADC9AB /* GreemSwiftPackage */; };
+		634195492C67A6D300ADC9AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195482C67A6D300ADC9AB /* NetworkManager.swift */; };
+		6341954C2C67A6FE00ADC9AB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6341954B2C67A6FE00ADC9AB /* Alamofire */; };
+		6341954E2C67A7FD00ADC9AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6341954D2C67A7FD00ADC9AB /* AuthManager.swift */; };
+		634195522C67A84B00ADC9AB /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195512C67A84B00ADC9AB /* LogInView.swift */; };
+		634195552C67A9A300ADC9AB /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195542C67A9A300ADC9AB /* AuthRouter.swift */; };
+		634195572C67AA7400ADC9AB /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195562C67AA7400ADC9AB /* NetworkErrors.swift */; };
 		DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */; };
 		DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4D8D712C663021005BAD8B /* ContentView.swift */; };
 		DF4D8D742C663022005BAD8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF4D8D732C663022005BAD8B /* Assets.xcassets */; };
@@ -24,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		634195482C67A6D300ADC9AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6341954D2C67A7FD00ADC9AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		634195512C67A84B00ADC9AB /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		634195542C67A9A300ADC9AB /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		634195562C67AA7400ADC9AB /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		634195582C67AC7400ADC9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyBurstDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyBurstDayApp.swift; sourceTree = "<group>"; };
 		DF4D8D712C663021005BAD8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,12 +59,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634195462C67A6B900ADC9AB /* GreemSwiftPackage in Frameworks */,
+				6341954C2C67A6FE00ADC9AB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		634195472C67A6C500ADC9AB /* Greem */ = {
+			isa = PBXGroup;
+			children = (
+				634195502C67A84200ADC9AB /* GreemViews */,
+				6341954F2C67A83800ADC9AB /* Networks */,
+			);
+			path = Greem;
+			sourceTree = "<group>";
+		};
+		6341954F2C67A83800ADC9AB /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				634195532C67A99B00ADC9AB /* Routers */,
+				634195482C67A6D300ADC9AB /* NetworkManager.swift */,
+				6341954D2C67A7FD00ADC9AB /* AuthManager.swift */,
+				634195562C67AA7400ADC9AB /* NetworkErrors.swift */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		634195502C67A84200ADC9AB /* GreemViews */ = {
+			isa = PBXGroup;
+			children = (
+				634195512C67A84B00ADC9AB /* LogInView.swift */,
+			);
+			path = GreemViews;
+			sourceTree = "<group>";
+		};
+		634195532C67A99B00ADC9AB /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				634195542C67A9A300ADC9AB /* AuthRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		DF4D8D632C663021005BAD8B = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +122,8 @@
 		DF4D8D6E2C663021005BAD8B /* HappyBurstDay */ = {
 			isa = PBXGroup;
 			children = (
+				634195582C67AC7400ADC9AB /* Info.plist */,
+				634195472C67A6C500ADC9AB /* Greem */,
 				DF4D8D712C663021005BAD8B /* ContentView.swift */,
 				DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */,
 				DFAB18842C679C26007D2765 /* Helper */,
@@ -145,6 +198,10 @@
 			dependencies = (
 			);
 			name = HappyBurstDay;
+			packageProductDependencies = (
+				634195452C67A6B900ADC9AB /* GreemSwiftPackage */,
+				6341954B2C67A6FE00ADC9AB /* Alamofire */,
+			);
 			productName = HappyBurstDay;
 			productReference = DF4D8D6C2C663021005BAD8B /* HappyBurstDay.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +230,10 @@
 				Base,
 			);
 			mainGroup = DF4D8D632C663021005BAD8B;
+			packageReferences = (
+				634195442C67A6B900ADC9AB /* XCRemoteSwiftPackageReference "GreemSwiftPackage" */,
+				6341954A2C67A6FE00ADC9AB /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = DF4D8D6D2C663021005BAD8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,9 +269,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				634195522C67A84B00ADC9AB /* LogInView.swift in Sources */,
+				634195492C67A6D300ADC9AB /* NetworkManager.swift in Sources */,
 				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
+				634195552C67A9A300ADC9AB /* AuthRouter.swift in Sources */,
 				DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */,
+				634195572C67AA7400ADC9AB /* NetworkErrors.swift in Sources */,
 				DFAB18872C679C42007D2765 /* Helper+PretendardFont.swift in Sources */,
+				6341954E2C67A7FD00ADC9AB /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +413,7 @@
 				DEVELOPMENT_TEAM = 4QMNM64P9Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HappyBurstDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -376,6 +443,7 @@
 				DEVELOPMENT_TEAM = 4QMNM64P9Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HappyBurstDay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -416,6 +484,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		634195442C67A6B900ADC9AB /* XCRemoteSwiftPackageReference "GreemSwiftPackage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TaeYoon17/GreemSwiftPackage.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		6341954A2C67A6FE00ADC9AB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		634195452C67A6B900ADC9AB /* GreemSwiftPackage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 634195442C67A6B900ADC9AB /* XCRemoteSwiftPackageReference "GreemSwiftPackage" */;
+			productName = GreemSwiftPackage;
+		};
+		6341954B2C67A6FE00ADC9AB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6341954A2C67A6FE00ADC9AB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DF4D8D642C663021005BAD8B /* Project object */;
 }
