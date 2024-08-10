@@ -14,7 +14,13 @@
 		<string>Pretendard-Regular.ttf</string>
 		<string>Pretendard-SemiBold.ttf</string>
 		<string>Pretendard-Thin.ttf</string>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 5ff5306 ([FEAT] WishListView UI 구현)
+=======
+>>>>>>> e8fffaf (conflict 해결)
 		<string>SUIT-Thin.otf</string>
 		<string>SUIT-ExtraLight.otf</string>
 		<string>SUIT-Light.otf</string>
@@ -24,7 +30,11 @@
 		<string>SUIT-SemiBold.otf</string>
 		<string>SUIT-ExtraBold.otf</string>
 		<string>SUIT-Heavy.otf</string>
+<<<<<<< HEAD
 
+=======
+>>>>>>> cb85bf7 (conflict 해결)
+>>>>>>> e8fffaf (conflict 해결)
 	</array>
 </dict>
 </plist>
