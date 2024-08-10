@@ -12,7 +12,6 @@ struct SearchView: View {
     @StateObject private var viewModel = SearchViewModel()
     
     @State private var showSnackbar: Bool = false
-    
     var body: some View {
         ZStack {
             Color.gray100
