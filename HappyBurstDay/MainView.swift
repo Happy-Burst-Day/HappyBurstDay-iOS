@@ -38,7 +38,7 @@ struct SettingView: View {
                 .font(.system(size: 20))
                 .padding(.trailing, 24)
                 .onTapGesture {
-                    
+                    // 설정 이동
                 }
         }
     }
@@ -166,7 +166,7 @@ struct WishRow: View {
                 
                 Text("Consume Frequently")
                     .font(.Alert.alert)
-                    . foregroundColor(.white)
+                    .foregroundColor(.white)
                     .padding(.vertical, 4)
                     .padding(.horizontal, 5)
                     .background(Color.darkMint)
@@ -179,7 +179,7 @@ struct WishRow: View {
                     .font(.system(size: 24))
                     .foregroundColor(.customPink)
                     .onTapGesture {
-                        
+                        // 하트 수 올라가게 해줭
                     }
                 Text("0")
                     .font(.system(size: 24))
@@ -202,13 +202,104 @@ struct MyBabyView: View {
         ZStack {
             Color.gray150
                 .ignoresSafeArea()
-            
-            VStack {
-                
+            ScrollView{
+                VStack(spacing: 0) {
+                    BabyDayView()
+                    NotEatListView()
+                }
             }
         }
     }
 }
+
+struct BabyDayView: View {
+    var body: some View {
+        ZStack {
+            Image(.imgBaby)
+                .resizable()
+                .scaledToFit()
+            
+            VStack(alignment: .center) {
+                Spacer()
+                
+                Text("D - 48")
+                    .font(.system(size: 30))
+                    .foregroundColor(.black)
+                    .padding(.bottom, 30)
+            }.frame(width: 352, height: 372)
+        }
+        .padding(.horizontal, 21)
+        .padding(.top, 25)
+        .padding(.bottom, 30)
+    }
+}
+
+struct NotEatListView: View {
+    var body: some View {
+        Text("You Can Eat After 48 days")
+            .font(.Title.title2)
+            .foregroundColor(.black)
+            .padding(.trailing, 100)
+            .padding(.bottom, 25)
+        
+        NotEatRow()
+        NotEatRow()
+    }
+}
+
+struct NotEatRow: View {
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 3) {
+                    Image(.iconBan)
+                    Text("Do not Consume")
+                        .font(.Alert.alert)
+                        .foregroundColor(.customOrange)
+                }
+                
+                HStack(spacing: 10) {
+                    Text("Steak Rice Bowl")
+                        .font(.Title.title3)
+                        .foregroundColor(.customBlack)
+                    
+                    Text("430 kcal")
+                        .font(.Body.body2)
+                        .foregroundColor(.gray600)
+                        .padding(.top, 4)
+                }
+                
+                Text("Available after 48 days")
+                    .font(.Alert.alert)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 5)
+                    .background(Color.darkPink)
+                    .cornerRadius(4)
+            }
+            Spacer()
+            
+            VStack(spacing: 3){
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 24))
+                    .foregroundColor(.customPink)
+                    .onTapGesture {
+                        // 하트 수 올라가게 해줭
+                    }
+                Text("0")
+                    .font(.system(size: 24))
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 17)
+        .background(Color.white)
+        .cornerRadius(10)
+        .padding(.leading, 16)
+        .padding(.trailing, 18)
+        .padding(.bottom, 12)
+    }
+}
+
 
 #Preview {
     MainView()
