@@ -9,74 +9,27 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @StateObject private var viewModel = SearchViewModel()
+    
     @State private var isAddedToWishlist: Bool = false
     @State private var showSnackbar: Bool = false
     
     var body: some View {
-        
         ZStack {
+            Color.gray100
+                .ignoresSafeArea()
+            
             VStack(spacing: 0) {
                 SearchField()
                     .padding(.bottom, 26)
+                    .background(Color.white)
                 
-                ZStack {
-                    Rectangle()
-                        .foregroundColor(.red)
-                        .frame(width: 353, height: 112)
-                        .background(.white)
-                        .cornerRadius(10)
+                ForEach(viewModel.searchModels.indices, id: \.self) { index in
                     
-                    HStack {
-                        VStack(alignment: .leading, spacing: 12) {
-                            HStack(spacing: 3) {
-                                Image(.iconCaution)
-                                Text("주의가 필요해요")
-                                    .font(.Alert.alert)
-                                    .foregroundColor(.customOrange)
-                            }
-                            
-                            HStack(spacing: 10) {
-                                Text("연어덮밥")
-                                    .font(.Title.title3)
-                                    .foregroundColor(.customBlack)
-                                
-                                Text("430 kcal")
-                                    .font(.Body.body2)
-                                    .foregroundColor(.gray600)
-                                    .padding(.top, 4)
-                            }
-                            
-                            HStack(spacing: 7) {
-                                Text("필수영양소 충족")
-                                    .font(.Alert.alert)
-                                    . foregroundColor(.customBlack)
-                                    .padding(.vertical, 4)
-                                    .padding(.horizontal, 5)
-                                    .background(Color.lightYellow)
-                                    .cornerRadius(4)
-                                
-                                Text("100명 이상 추가")
-                                    .font(.Alert.alert)
-                                    .foregroundColor(.customBlack)
-                                    .padding(.vertical, 4)
-                                    .padding(.horizontal, 5)
-                                    .background(Color.gray200)
-                                    .cornerRadius(4)
-                            }
-                        }
-                        
-                        Spacer()
-                            .frame(width: 104)
-                        
-                        Image(isAddedToWishlist ? "icon_check" : "icon_plus")
-                            .onTapGesture {
-                                isAddedToWishlist.toggle()
-                                showSnackbar.toggle()
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                    showSnackbar = false
-                                }
-                            }
-                    }
+                    FoodRow(index: index)
+                        .padding(.vertical, 3)
+                        .environmentObject(viewModel)
+                    
                 }
                 
                 Spacer()
@@ -90,7 +43,6 @@ struct SearchView: View {
         }
     }
 }
-
 
 
 struct SearchField: View {
@@ -128,72 +80,80 @@ struct SearchField: View {
     }
 }
 
-//struct FoodRow: View {
-//    @State private var isAddedToWishlist: Bool = false
-//    @State private var showSnackbar: Bool = false
-//
-//    var body: some View {
-//        ZStack {
-//            Rectangle()
-//                .foregroundColor(.red)
-//                .frame(width: 353, height: 112)
-//                .background(.white)
-//                .cornerRadius(10)
-//
-//            HStack {
-//                VStack(alignment: .leading, spacing: 12) {
-//                    HStack(spacing: 3) {
-//                        Image(.iconCaution)
-//                        Text("주의가 필요해요")
-//                            .font(.Alert.alert)
-//                            .foregroundColor(.customOrange)
-//                    }
-//
-//                    HStack(spacing: 10) {
-//                        Text("연어덮밥")
-//                            .font(.Title.title3)
-//                            .foregroundColor(.customBlack)
-//
-//                        Text("430 kcal")
-//                            .font(.Body.body2)
-//                            .foregroundColor(.gray600)
-//                            .padding(.top, 4)
-//                    }
-//
-//                    HStack(spacing: 7) {
-//                        Text("필수영양소 충족")
-//                            .font(.Alert.alert)
-//                            . foregroundColor(.customBlack)
-//                            .padding(.vertical, 4)
-//                            .padding(.horizontal, 5)
-//                            .background(Color.lightYellow)
-//                            .cornerRadius(4)
-//
-//                        Text("100명 이상 추가")
-//                            .font(.Alert.alert)
-//                            .foregroundColor(.customBlack)
-//                            .padding(.vertical, 4)
-//                            .padding(.horizontal, 5)
-//                            .background(Color.gray200)
-//                            .cornerRadius(4)
-//                    }
-//                }
-//
-//                Spacer()
-//                    .frame(width: 104)
-//
-//                Image(isAddedToWishlist ? "icon_check" : "icon_plus")
-//                    .onTapGesture {
-//                        isAddedToWishlist.toggle()
-//                        showSnackbar.toggle()
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                            showSnackbar = false
-//                        }
-//                    }
-//            }
-//        }
-//    }
-//}
+struct FoodRow: View {
+    @EnvironmentObject var viewModel: SearchViewModel
+    
+    @State private var isAddedToWishlist: Bool = false
+    @State private var showSnackbar: Bool = false
+    
+    var index: Int
+    var body: some View {
+        
+        let searchModel = viewModel.searchModels[index]
+        let (icon, message) = viewModel.cautionDetails(for: index)
+        let nutritionMessages = viewModel.nutritionMessages(for: index)
+        
+        ZStack {
+            Rectangle()
+                .foregroundColor(.clear)
+                .frame(width: 353, height: 112)
+                .background(.white)
+                .cornerRadius(10)
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    HStack(spacing: 3) {
+                        Image(icon)
+                        Text(message)
+                            .font(.Alert.alert)
+                            .foregroundColor(.customOrange)
+                    }
+                    
+                    HStack(spacing: 10) {
+                        Text(viewModel.searchModels[index].food)
+                            .font(.Title.title3)
+                            .foregroundColor(.customBlack)
+                        
+                        Text("\(viewModel.searchModels[index].calorie) kcal")
+                            .font(.Body.body2)
+                            .foregroundColor(.gray600)
+                            .padding(.top, 4)
+                    }
+                    
+                    HStack(spacing: 7) {
+                        Text("essential nutrients")
+                            .font(.Alert.alert)
+                            . foregroundColor(.customBlack)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 5)
+                            .background(Color.lightYellow)
+                            .cornerRadius(4)
+                        
+                        Text("added over 100 people")
+                            .font(.Alert.alert)
+                            .foregroundColor(.customBlack)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 5)
+                            .background(Color.gray200)
+                            .cornerRadius(4)
+                    }
+                }
+                
+                Spacer()
+                
+                Image(isAddedToWishlist ? "icon_check" : "icon_plus")
+                    .onTapGesture {
+                        isAddedToWishlist.toggle()
+                        showSnackbar.toggle()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            showSnackbar = false
+                        }
+                    }
+            }
+            .frame(width: 313)
+        }
+    }
+}
 
 struct Snackbar: View {
     var body: some View {

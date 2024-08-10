@@ -34,6 +34,7 @@
 		DFAB18892C67A77D007D2765 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFAB18882C67A77D007D2765 /* Colors.xcassets */; };
 		DFAB188B2C67A82A007D2765 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB188A2C67A82A007D2765 /* SearchView.swift */; };
 		DFAB188E2C67C722007D2765 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAB188D2C67C722007D2765 /* SearchModel.swift */; };
+		DFB1695F2C67CE7B0012701F /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,12 +65,12 @@
 		F7B336022C68054F001F8FD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 
 		DFAB18882C67A77D007D2765 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-<<<<<<< HEAD
 
-=======
 		DFAB188A2C67A82A007D2765 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DFAB188D2C67C722007D2765 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
->>>>>>> 48fc5c9 ([FEAT] SearchView UI 구현)
+
+		DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,14 +103,14 @@
 		DF4D8D6E2C663021005BAD8B /* HappyBurstDay */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+
 				F7B336022C68054F001F8FD3 /* Info.plist */,
 				DF4D8D712C663021005BAD8B /* ContentView.swift */,
-=======
->>>>>>> 48fc5c9 ([FEAT] SearchView UI 구현)
+
 				DF4D8D6F2C663021005BAD8B /* HappyBurstDayApp.swift */,
 				DF4D8D712C663021005BAD8B /* ContentView.swift */,
 				DFAB188A2C67A82A007D2765 /* SearchView.swift */,
+				DFB1695E2C67CE7B0012701F /* SearchViewModel.swift */,
 				DFAB188C2C67C715007D2765 /* Model */,
 				DFAB18842C679C26007D2765 /* Helper */,
 				DFAB186F2C679BF6007D2765 /* Resource */,
@@ -169,7 +170,7 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
+
 		F7B336012C6804AB001F8FD3 /* SUIT */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,14 +185,14 @@
 				F7B335EF2C6804A5001F8FD3 /* SUIT-Heavy.otf */,
 			);
 			path = SUIT;
-=======
+
 		DFAB188C2C67C715007D2765 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DFAB188D2C67C722007D2765 /* SearchModel.swift */,
 			);
 			path = Model;
->>>>>>> 48fc5c9 ([FEAT] SearchView UI 구현)
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFB1695F2C67CE7B0012701F /* SearchViewModel.swift in Sources */,
 				DFAB188B2C67A82A007D2765 /* SearchView.swift in Sources */,
 				DF4D8D722C663021005BAD8B /* ContentView.swift in Sources */,
 				DF4D8D702C663021005BAD8B /* HappyBurstDayApp.swift in Sources */,
