@@ -10,7 +10,10 @@ import SwiftUI
 extension SignUpView{
     struct PasswordCPT: View {
         let desc:String
+        let placeholder:String
         @Binding var pw:String
+        var focus:FocusState<SignUpFocus?>.Binding
+        let equals: SignUpFocus
         var body: some View {
             VStack(spacing:23) {
                 HStack{
@@ -19,9 +22,10 @@ extension SignUpView{
                 }
                 HStack{
                     VStack{
-                        TextField("characters, 숫자 포함", text: $pw)
+                        SecureField(placeholder, text: $pw)
                             .font(.Body.body1)
                             .textFieldStyle(.plain).tint(.black)
+                            .focused(focus,equals: equals)
                         Rectangle().fill(.black).frame(height: 1)
                     }
                 }

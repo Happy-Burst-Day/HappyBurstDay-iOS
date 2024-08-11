@@ -4,37 +4,36 @@
 <dict>
 	<key>CFBundleIdentifier</key>
 	<string></string>
-    <key>UIAppFonts</key>
-    <array>
-        <string>SUIT-Thin.otf</string>
-        <string>SUIT-ExtraLight.otf</string>
-        <string>SUIT-Light.otf</string>
-        <string>SUIT-Regular.otf</string>
-        <string>SUIT-Medium.otf</string>
-        <string>SUIT-Bold.otf</string>
-        <string>SUIT-SemiBold.otf</string>
-        <string>SUIT-ExtraBold.otf</string>
-        <string>SUIT-Heavy.otf</string>
-
-        <string>Pretendard-Black.ttf</string>
-        <string>Pretendard-Bold.ttf</string>
-        <string>Pretendard-ExtraBold.ttf</string>
-        <string>Pretendard-ExtraLight.ttf</string>
-        <string>Pretendard-Light.ttf</string>
-        <string>Pretendard-Medium.ttf</string>
-        <string>Pretendard-Regular.ttf</string>
-        <string>Pretendard-SemiBold.ttf</string>
-        <string>Pretendard-Thin.ttf</string>
-        <string>SUIT-Thin.otf</string>
-        <string>SUIT-ExtraLight.otf</string>
-        <string>SUIT-Light.otf</string>
-        <string>SUIT-Regular.otf</string>
-        <string>SUIT-Medium.otf</string>
-        <string>SUIT-Bold.otf</string>
-        <string>SUIT-SemiBold.otf</string>
-        <string>SUIT-ExtraBold.otf</string>
-        <string>SUIT-Heavy.otf</string>
-    </array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SUIT-Thin.otf</string>
+		<string>SUIT-ExtraLight.otf</string>
+		<string>SUIT-Light.otf</string>
+		<string>SUIT-Regular.otf</string>
+		<string>SUIT-Medium.otf</string>
+		<string>SUIT-Bold.otf</string>
+		<string>SUIT-SemiBold.otf</string>
+		<string>SUIT-ExtraBold.otf</string>
+		<string>SUIT-Heavy.otf</string>
+		<string>Pretendard-Black.ttf</string>
+		<string>Pretendard-Bold.ttf</string>
+		<string>Pretendard-ExtraBold.ttf</string>
+		<string>Pretendard-ExtraLight.ttf</string>
+		<string>Pretendard-Light.ttf</string>
+		<string>Pretendard-Medium.ttf</string>
+		<string>Pretendard-Regular.ttf</string>
+		<string>Pretendard-SemiBold.ttf</string>
+		<string>Pretendard-Thin.ttf</string>
+		<string>SUIT-Thin.otf</string>
+		<string>SUIT-ExtraLight.otf</string>
+		<string>SUIT-Light.otf</string>
+		<string>SUIT-Regular.otf</string>
+		<string>SUIT-Medium.otf</string>
+		<string>SUIT-Bold.otf</string>
+		<string>SUIT-SemiBold.otf</string>
+		<string>SUIT-ExtraBold.otf</string>
+		<string>SUIT-Heavy.otf</string>
+	</array>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -42,4 +41,3 @@
 	</dict>
 </dict>
 </plist>
-    

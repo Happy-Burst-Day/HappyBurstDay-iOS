@@ -16,11 +16,10 @@ final class SignInVM: ObservableObject{
         do{
             await MainActor.run { event.send(.signInLoading) }
             let signInDto = try await NetworkManager.shared.auth.signIn(email: email, pw: pw)
-            
             await MainActor.run {
                 Defaults.shared.accessToken = signInDto.accessToken
                 Defaults.shared.refreshToken = signInDto.refreshToken
-                Defaults.shared.expiration = Date()
+                Defaults.shared.expiration = Date(timeIntervalSinceNow: NetworkManager.accessExpireSeconds)
                 event.send(.signInSuccess)
             }
         }catch{

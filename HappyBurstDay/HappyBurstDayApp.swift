@@ -9,12 +9,31 @@ import SwiftUI
 
 @main
 struct HappyBurstDayApp: App {
+    @State var isLogIn = false
     var body: some Scene {
         WindowGroup {
-            MainView()
+            Group{
+                if isLogIn{
+                    MainView()
+                }else{
+                    SignView()
+                }
+            }.onReceive(AppManager.shard.loginPassthroughSubject, perform: { isLogIn in
+                Task{
+                    print(isLogIn)
+                    try await Task.sleep(nanoseconds:1000)
+                    await MainActor.run {
+                        self.isLogIn = isLogIn
+                    }
+                }
+            })
+//            MainView()
 //            ContentView()
-//            SignView()
-            SearchView()
+            
+//            SearchView()
+//            NavigationStack {
+//                BirthDateView().toolbar(.hidden, for: .navigationBar)
+//            }
         }
     }
 }

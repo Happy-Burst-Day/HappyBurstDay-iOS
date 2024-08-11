@@ -15,6 +15,7 @@
 		630A1E8C2C6833DB00788D59 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A1E8B2C6833DB00788D59 /* Tab.swift */; };
 		630A1E8E2C6833EE00788D59 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A1E8D2C6833EE00788D59 /* CustomTabView.swift */; };
 		630A1E902C68351B00788D59 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A1E8F2C68351B00788D59 /* SearchView.swift */; };
+		630A1E952C68528A00788D59 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A1E942C68528A00788D59 /* AppManager.swift */; };
 		634195462C67A6B900ADC9AB /* GreemSwiftPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 634195452C67A6B900ADC9AB /* GreemSwiftPackage */; };
 		634195492C67A6D300ADC9AB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634195482C67A6D300ADC9AB /* NetworkManager.swift */; };
 		6341954C2C67A6FE00ADC9AB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6341954B2C67A6FE00ADC9AB /* Alamofire */; };
@@ -73,6 +74,7 @@
 		630A1E8B2C6833DB00788D59 /* Tab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		630A1E8D2C6833EE00788D59 /* CustomTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		630A1E8F2C68351B00788D59 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		630A1E942C68528A00788D59 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		634195482C67A6D300ADC9AB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6341954D2C67A7FD00ADC9AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		634195512C67A84B00ADC9AB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,10 @@
 		630A1E822C68339700788D59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				634195962C682B7200ADC9AB /* BirthDateView */,
+				630A1E932C6837AE00788D59 /* SignInView */,
+				630A1E922C6837A300788D59 /* SignUpView */,
+				630A1E912C68379200788D59 /* SignView */,
 				630A1E8F2C68351B00788D59 /* SearchView.swift */,
 				630A1E8D2C6833EE00788D59 /* CustomTabView.swift */,
 				630A1E8B2C6833DB00788D59 /* Tab.swift */,
@@ -157,10 +163,40 @@
 		630A1E862C6833C500788D59 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6341955C2C67B89500ADC9AB /* SignInVM.swift */,
+				6341956B2C67CEA400ADC9AB /* SignVM.swift */,
+				634195752C67DC8900ADC9AB /* SignUpVM.swift */,
 				630A1E892C6833D000788D59 /* WishListViewModel.swift */,
 				630A1E872C6833CC00788D59 /* SearchViewModel.swift */,
+				630A1E942C68528A00788D59 /* AppManager.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		630A1E912C68379200788D59 /* SignView */ = {
+			isa = PBXGroup;
+			children = (
+				634195692C67CD8E00ADC9AB /* SignView.swift */,
+			);
+			path = SignView;
+			sourceTree = "<group>";
+		};
+		630A1E922C6837A300788D59 /* SignUpView */ = {
+			isa = PBXGroup;
+			children = (
+				634195672C67CD4E00ADC9AB /* SignUpView.swift */,
+				634195712C67D4A100ADC9AB /* SignUpEmailCPT.swift */,
+				634195732C67D53100ADC9AB /* SingUpPasswordCPT.swift */,
+			);
+			path = SignUpView;
+			sourceTree = "<group>";
+		};
+		630A1E932C6837AE00788D59 /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				634195512C67A84B00ADC9AB /* SignInView.swift */,
+			);
+			path = SignInView;
 			sourceTree = "<group>";
 		};
 		634195472C67A6C500ADC9AB /* Greem */ = {
@@ -188,10 +224,8 @@
 		634195502C67A84200ADC9AB /* GreemViews */ = {
 			isa = PBXGroup;
 			children = (
-				634195962C682B7200ADC9AB /* BirthDateViw */,
 				6341957B2C67F72B00ADC9AB /* SignInView */,
 				634195702C67D48E00ADC9AB /* SignUpView */,
-				634195692C67CD8E00ADC9AB /* SignView.swift */,
 			);
 			path = GreemViews;
 			sourceTree = "<group>";
@@ -209,9 +243,6 @@
 		6341955B2C67B87F00ADC9AB /* GreemViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				6341955C2C67B89500ADC9AB /* SignInVM.swift */,
-				6341956B2C67CEA400ADC9AB /* SignVM.swift */,
-				634195752C67DC8900ADC9AB /* SignUpVM.swift */,
 			);
 			path = GreemViewModels;
 			sourceTree = "<group>";
@@ -239,9 +270,6 @@
 		634195702C67D48E00ADC9AB /* SignUpView */ = {
 			isa = PBXGroup;
 			children = (
-				634195672C67CD4E00ADC9AB /* SignUpView.swift */,
-				634195712C67D4A100ADC9AB /* SignUpEmailCPT.swift */,
-				634195732C67D53100ADC9AB /* SingUpPasswordCPT.swift */,
 			);
 			path = SignUpView;
 			sourceTree = "<group>";
@@ -249,7 +277,6 @@
 		6341957B2C67F72B00ADC9AB /* SignInView */ = {
 			isa = PBXGroup;
 			children = (
-				634195512C67A84B00ADC9AB /* SignInView.swift */,
 			);
 			path = SignInView;
 			sourceTree = "<group>";
@@ -279,12 +306,12 @@
 			path = NetworkManagers;
 			sourceTree = "<group>";
 		};
-		634195962C682B7200ADC9AB /* BirthDateViw */ = {
+		634195962C682B7200ADC9AB /* BirthDateView */ = {
 			isa = PBXGroup;
 			children = (
 				634195972C682B7C00ADC9AB /* BirthDateView.swift */,
 			);
-			path = BirthDateViw;
+			path = BirthDateView;
 			sourceTree = "<group>";
 		};
 		DF4D8D632C663021005BAD8B = {
@@ -485,6 +512,7 @@
 				634195682C67CD4E00ADC9AB /* SignUpView.swift in Sources */,
 				630A1E8E2C6833EE00788D59 /* CustomTabView.swift in Sources */,
 				634195622C67C86F00ADC9AB /* SignUpDto.swift in Sources */,
+				630A1E952C68528A00788D59 /* AppManager.swift in Sources */,
 				630A1E7F2C6832C700788D59 /* Helper+SuitFont.swift in Sources */,
 				634195782C67E15400ADC9AB /* AuthInterceptor.swift in Sources */,
 				634195932C681FB400ADC9AB /* FoodRouter.swift in Sources */,

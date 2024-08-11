@@ -25,11 +25,6 @@ struct SignInView:View{
                 ProgressView().progressViewStyle(.circular)
             }else{
                 VStack(spacing: 0){
-                    Button{
-                        Task{ await vm.check() }
-                    }label: {
-                        Text("Check")
-                    }
                     HStack{
                         Button{ dismiss() }label: {
                             Image(.backIcon).frame(width: 13,height: 17)
@@ -49,14 +44,13 @@ struct SignInView:View{
                     }.scrollIndicators(.hidden)
                     if focus != nil{
                         Button(action: {
-                            Task{  await vm.signIn(email:"wow12@google.com", pw:"1q2w3e4r") }
-//                            Task{ await vm.check() }
+                            Task{  await vm.signIn(email:email, pw:pw) }
                         }, label: {
                             HStack{
                                 Spacer()
                                 Text("LOGIN").font(.Title.title2)
                                 Spacer()
-                            }.frame(height: 68).background(.gray)
+                            }.frame(height: 68).background(.darkMint).foregroundStyle(.white)
                         }).opacity(focus == nil ? 0 : 1)
                     }
                 }
@@ -77,7 +71,7 @@ struct SignInView:View{
             case .signInSuccess:
                 isLoading = false
                 signInAccess = true
-                print("signinaccess")
+                AppManager.shard.loginPassthroughSubject.send(true)
             case .signInLoading:
                 isLoading = true
             }
@@ -97,10 +91,17 @@ extension SignInView{
                 }
                 HStack{
                     VStack{
-                        TextField("Enter Email", text: $text)
-                            .font(.Body.body1)
-                            .textFieldStyle(.plain).tint(.black)
-                            .focused(focus, equals: .email)
+                        HStack{
+                            TextField("Enter Email", text: $text)
+                                .font(.Body.body1)
+                                .textFieldStyle(.plain).tint(.black)
+                                .focused(focus, equals: .email)
+                            Button{
+                                text = ""
+                            }label: {
+                                Image(.closeIcon).frame(width: 14,height: 14)
+                            }
+                        }
                         Rectangle().fill(.black).frame(height: 1)
                     }
                 }
@@ -118,10 +119,17 @@ extension SignInView{
                 }
                 HStack{
                     VStack{
-                        SecureField("Enter Password", text: $text)
-                            .font(.Body.body1)
-                            .textFieldStyle(.plain).tint(.black)
-                            .focused(focus, equals: .email)
+                        HStack{
+                            SecureField("Enter Password", text: $text)
+                                .font(.Body.body1)
+                                .textFieldStyle(.plain).tint(.black)
+                                .focused(focus, equals: .email)
+                            Button{
+                                text = ""
+                            }label: {
+                                Image(.closeIcon).frame(width: 14,height: 14)
+                            }
+                        }
                         Rectangle().fill(.black).frame(height: 1)
                     }
                 }

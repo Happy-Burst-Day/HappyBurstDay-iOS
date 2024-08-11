@@ -15,10 +15,15 @@ struct SignUpView: View {
     @Environment(\.navigationControllerState) var naviState
     @Environment(\.dismiss) var dismiss
     @StateObject var vm: SignUpVM = .init()
+    @Binding var pathes:[SignPath]
     @State private var email = ""
     @State private var pw = ""
     @State private var dup = ""
     @State private var isLoading = false
+    @State private var pwInfo:String = ""
+    @State private var dupInfo:String = ""
+    @State private var emailInfo = ""
+    @State private var networkErrorOccured = false
     @FocusState var focusState: SignUpFocus?
     var body: some View {
         VStack(spacing: 0){
@@ -35,11 +40,10 @@ struct SignUpView: View {
             ScrollView{
                 VStack(spacing: 41){
                     EmailCPT(email: $email, focus: $focusState, duplicateAction: {
-                        
                     })
                     VStack(spacing: 25){
-                        PasswordCPT(desc: "character, 숫자 포함", pw: $pw)
-                        PasswordCPT(desc: "영문, 숫자 포함",pw: $dup)
+                        PasswordCPT(desc: "characters at least 8 length",placeholder: "characters at least 8 length", pw: $pw,focus: $focusState,equals: .pw)
+                        PasswordCPT(desc: "re-enter the password",placeholder: "re-enter the password",pw: $dup,focus: $focusState,equals: .email)
                     }
                 }.padding(.horizontal, 20)
                 Rectangle().fill(.clear).frame(height: 44)
@@ -47,14 +51,34 @@ struct SignUpView: View {
             Spacer()
             if focusState != nil{
                 Button(action: {
-                    Task{  await vm.signUp(email:"wow12@google.com", pw:"1q2w3e4r") }
+                    guard dup != pw else{
+                        return
+                    }
+                    Task{ 
+                        do{
+                            let userDto = try await vm.signUp(email:self.email, pw:self.pw)
+                            try await vm.singIn(email: userDto.email, pw: self.pw)
+                            await MainActor.run { pathes.append(.birthDate) }
+                        }catch{
+                            networkErrorOccured = true
+                        }
+                    }
                 }, label: {
                     HStack{
                         Spacer()
-                        Text("회원가입").font(.Title.title2)
+                        Text("Sign Up").font(.Title.title2).foregroundStyle(.white)
                         Spacer()
-                    }.frame(height: 68).background(.gray)
+                    }.frame(height: 68).background(.darkMint).tint(.darkMint)
                 }).opacity(focusState == nil ? 0 : 1)
+                    .alert("Error Occured", isPresented: $networkErrorOccured) {
+                        Button(role: .cancel) {
+                            networkErrorOccured = false
+                        } label: {
+                            Text("Confirm")
+                        }
+
+                    } 
+
             }
         }.toolbar(.hidden, for: .navigationBar)
             .onReceive(vm.event, perform: { @MainActor event in
@@ -72,14 +96,12 @@ struct SignUpView: View {
             naviState.allowsSwipeBack = true
             Task{
                 try await Task.sleep(nanoseconds: 100)
-                await MainActor.run {
-                    withAnimation { focusState = .email }
-                }
+                await MainActor.run { withAnimation { focusState = .email } }
             }
         }
     }
 }
 
-#Preview {
-    SignUpView()
-}
+//#Preview {
+//    SignUpView()
+//}
