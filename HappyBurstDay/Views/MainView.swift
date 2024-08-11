@@ -148,9 +148,6 @@ struct FoodWishView: View {
 struct WishRow: View {
 
     @State private var heartCount: Int = 0
-
-    @State private var heartCount: Int = 0
-
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 12) {
@@ -160,8 +157,7 @@ struct WishRow: View {
                         .font(.Alert.alert)
                         .foregroundColor(.customOrange)
                 }
-                
-                HStack(spacing: 10) {
+                VStack{
                     Text("Steak Rice Bowl")
                         .font(.Title.title3)
                         .foregroundColor(.customBlack)
@@ -200,18 +196,18 @@ struct WishRow: View {
 
                         
                     }
-                Text("0")
+            Text("0").onTapGesture {
+                
+            
 
 
                         heartCount += 1
                         let generator = UIImpactFeedbackGenerator(style: .medium)
                         generator.impactOccurred()
                     }
-                Text("\(heartCount)")
-
-                    .font(.system(size: 24))
+            Text("\(heartCount)").font(.system(size: 24))
             }
-        }
+        
         .padding(.horizontal, 16)
         .padding(.vertical, 17)
         .background(Color.white)
@@ -247,29 +243,7 @@ struct EmptyRowView: View {
 }
 
 
-struct EmptyRowView: View {
-    var body: some View {
-        ZStack {
-            Color.gray150
-                .ignoresSafeArea()
-            
-            VStack(spacing: 0){
-                Image(systemName: "plus")
-                    .font(.system(size: 12))
-                    .foregroundColor(.white)
-                    .padding(.vertical, 12)
-                    .padding(.horizontal, 11)
-                    .background(Color.customBlack)
-                    .cornerRadius(10)
-                    .padding(.bottom, 21)
-                
-                Text("Your Wish List is Empty.\nPlease add your wish food.")
-                    .font(.Alert.alert)
-                    .foregroundColor(.gray600)
-            }
-        }
-    }
-}
+
 
 
 

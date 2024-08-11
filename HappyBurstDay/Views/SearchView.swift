@@ -10,17 +10,14 @@ import SwiftUI
 struct SearchView: View {
     
     @StateObject private var viewModel = SearchViewModel()
-
+    
     
     @State private var isAddedToWishlist: Bool = false
     @State private var showSnackbar: Bool = false
-
     
-    @State private var showSnackbar: Bool = false
     var body: some View {
         ZStack {
-            Color.gray100
-                .ignoresSafeArea()
+            Color.gray100.ignoresSafeArea()
             
             VStack {
                 SearchField()
@@ -34,29 +31,31 @@ struct SearchView: View {
                             .padding(.vertical, 3)
                             .environmentObject(viewModel)
                     }
-
-            VStack(spacing: 0) {
-                SearchField()
-                    .padding(.bottom, 26)
-                    .background(Color.white)
-                
-                ForEach(viewModel.searchModels.indices, id: \.self) { index in
                     
-                    FoodRow(index: index)
-                        .padding(.vertical, 3)
-                        .environmentObject(viewModel)
+                    VStack(spacing: 0) {
+                        SearchField()
+                            .padding(.bottom, 26)
+                            .background(Color.white)
+                        
+                        ForEach(viewModel.searchModels.indices, id: \.self) { index in
+                            
+                            //                            FoodRow(index: index,showSnackbar: $viewModel.searchModels)
+                            //                                .padding(.vertical, 3)
+                            //                                .environmentObject(viewModel)
+                            
+                        }
+                        
+                    }
+                    
+                    if showSnackbar {
+                        Snackbar()
+                            .padding(.top, 600)
+                    }
                     
                 }
                 
             }
-            
-            if showSnackbar {
-                Snackbar()
-                    .padding(.top, 600)
-            }
-            
         }
-        
     }
 }
 
@@ -100,12 +99,12 @@ struct SearchField: View {
 struct FoodRow: View {
     @EnvironmentObject var viewModel: SearchViewModel
     
-
+    
     @Binding var showSnackbar: Bool
-
+    
     @State private var isAddedToWishlist: Bool = false
-    @State private var showSnackbar: Bool = false
-
+    //    @State private var showSnackbar: Bool = false
+    
     
     var index: Int
     var body: some View {
@@ -162,26 +161,26 @@ struct FoodRow: View {
                 
                 Spacer()
                 
-
+                
                 Image(viewModel.selectedIndices.contains(index) ? "icon_check" : "icon_plus")
                     .onTapGesture {
                         viewModel.toggleSelection(for: index)
                         showSnackbar = true
-                Image(isAddedToWishlist ? "icon_check" : "icon_plus")
-                    .onTapGesture {
-                        isAddedToWishlist.toggle()
-                        showSnackbar.toggle()
-
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            showSnackbar = false
-                        }
+                        Image(isAddedToWishlist ? "icon_check" : "icon_plus")
+                            .onTapGesture {
+                                isAddedToWishlist.toggle()
+                                showSnackbar.toggle()
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    showSnackbar = false
+                                }
+                            }
                     }
+                    .frame(width: 313)
             }
-            .frame(width: 313)
         }
     }
 }
-
 struct Snackbar: View {
     var body: some View {
         HStack(spacing: 8) {
@@ -204,6 +203,3 @@ func performSearch() {
     }
 }
 
-#Preview {
-    SearchView()
-}

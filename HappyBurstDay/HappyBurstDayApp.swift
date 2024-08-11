@@ -11,8 +11,10 @@ import SwiftUI
 struct HappyBurstDayApp: App {
     var body: some Scene {
         WindowGroup {
+            MainView()
 //            ContentView()
-            SignView()
+//            SignView()
+            SearchView()
         }
     }
 }
