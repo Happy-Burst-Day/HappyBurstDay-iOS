@@ -11,7 +11,7 @@ struct MainView: View {
     @StateObject private var viewModel = WishListViewModel()
     
     var body: some View {
-        SettingView()
+        SetView()
         
         CustomTabView(
             views: [
@@ -23,32 +23,32 @@ struct MainView: View {
     }
 }
 
-
-struct SettingView: View {
+struct SetView: View {
     var body: some View {
         HStack {
             Text("BabyMomma")
                 .font(.system(size: 24))
                 .fontWeight(.bold)
                 .padding(.leading, 20)
+                .foregroundColor(.darkMint)
             
             Spacer()
             
             Image(systemName: "gearshape")
                 .font(.system(size: 20))
                 .padding(.trailing, 24)
+                .foregroundColor(.darkMint)
                 .onTapGesture {
-
-                    // 설정 이동
-
-                }
+                    
+                    
+            }
         }
     }
 }
 
 struct WishListView: View {
     var body: some View {
-
+        
         ZStack {
             Color.gray150
                 .ignoresSafeArea()
@@ -130,7 +130,7 @@ struct FoodWishView: View {
                 Image(systemName: "plus")
                     .font(.system(size: 12))
                     .foregroundColor(.white)
-
+                
                 Text("Add")
                     .font(.Body.body2)
                     .foregroundColor(.white)
@@ -146,8 +146,9 @@ struct FoodWishView: View {
 }
 
 struct WishRow: View {
-
+    
     @State private var heartCount: Int = 0
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 12) {
@@ -157,7 +158,8 @@ struct WishRow: View {
                         .font(.Alert.alert)
                         .foregroundColor(.customOrange)
                 }
-                VStack{
+                
+                HStack(spacing: 10) {
                     Text("Steak Rice Bowl")
                         .font(.Title.title3)
                         .foregroundColor(.customBlack)
@@ -170,11 +172,11 @@ struct WishRow: View {
                 
                 Text("Consume Frequently")
                     .font(.Alert.alert)
-
+                
                     .foregroundColor(.white)
-
+                
                     . foregroundColor(.white)
-
+                
                     .padding(.vertical, 4)
                     .padding(.horizontal, 5)
                     .background(Color.darkMint)
@@ -187,27 +189,16 @@ struct WishRow: View {
                     .font(.system(size: 24))
                     .foregroundColor(.customPink)
                     .onTapGesture {
-
+                        
                         heartCount += 1
                         let generator = UIImpactFeedbackGenerator(style: .medium)
                         generator.impactOccurred()
                     }
                 Text("\(heartCount)")
-
-                        
-                    }
-            Text("0").onTapGesture {
                 
-            
-
-
-                        heartCount += 1
-                        let generator = UIImpactFeedbackGenerator(style: .medium)
-                        generator.impactOccurred()
-                    }
-            Text("\(heartCount)").font(.system(size: 24))
+                    .font(.system(size: 24))
             }
-        
+        }
         .padding(.horizontal, 16)
         .padding(.vertical, 17)
         .background(Color.white)
@@ -217,6 +208,7 @@ struct WishRow: View {
         .padding(.bottom, 12)
     }
 }
+
 
 struct EmptyRowView: View {
     var body: some View {
@@ -242,18 +234,12 @@ struct EmptyRowView: View {
     }
 }
 
-
-
-
-
-
-
 struct MyBabyView: View {
     var body: some View {
         ZStack {
             Color.gray150
                 .ignoresSafeArea()
-
+            
             ScrollView{
                 VStack(spacing: 0) {
                     BabyDayView()
@@ -287,6 +273,9 @@ struct BabyDayView: View {
 }
 
 struct NotEatListView: View {
+    @State private var heartEatCount: Int = 0
+    @State private var heartEatCount2: Int = 0
+    
     var body: some View {
         Text("You Can Eat After 48 days")
             .font(.Title.title2)
@@ -294,15 +283,6 @@ struct NotEatListView: View {
             .padding(.trailing, 100)
             .padding(.bottom, 25)
         
-        NotEatRow()
-        NotEatRow()
-    }
-}
-
-struct NotEatRow: View {
-    @State private var heartEatCount: Int = 0
-    
-    var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 12) {
                 HStack(spacing: 3) {
@@ -353,12 +333,64 @@ struct NotEatRow: View {
         .padding(.leading, 16)
         .padding(.trailing, 18)
         .padding(.bottom, 12)
+        
+        HStack {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(spacing: 3) {
+                    Image(.iconBan)
+                    Text("Do not Consume")
+                        .font(.Alert.alert)
+                        .foregroundColor(.customOrange)
+                }
+                
+                HStack(spacing: 10) {
+                    Text("Draft Beer")
+                        .font(.Title.title3)
+                        .foregroundColor(.customBlack)
+                    
+                    Text("400 kcal")
+                        .font(.Body.body2)
+                        .foregroundColor(.gray600)
+                        .padding(.top, 4)
+                }
+                
+                Text("Available after 48 days")
+                    .font(.Alert.alert)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 5)
+                    .background(Color.darkPink)
+                    .cornerRadius(4)
+            }
+            Spacer()
+            
+            VStack(spacing: 3){
+                Image(systemName: "heart.fill")
+                    .font(.system(size: 24))
+                    .foregroundColor(.customPink)
+                    .onTapGesture {
+                        heartEatCount2 += 1
+                        let generator = UIImpactFeedbackGenerator(style: .medium)
+                        generator.impactOccurred()
+                    }
+                Text("\(heartEatCount2)")
+                    .font(.system(size: 24))
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 17)
+        .background(Color.white)
+        .cornerRadius(10)
+        .padding(.leading, 16)
+        .padding(.trailing, 18)
+        .padding(.bottom, 12)
+        
     }
 }
 
 
 
+
 #Preview {
     MainView()
-//    EmptyRowView()
 }

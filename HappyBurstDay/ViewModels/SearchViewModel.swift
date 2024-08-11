@@ -12,8 +12,6 @@ class SearchViewModel: ObservableObject {
     @Published var selectedIndices: Set<Int> = []
     @Published var searchModels: [SearchModel] = dummyData
     
-    //api 통신해서 searchModels에 저장
-    
     func cautionDetails(for index: Int) -> (icon: String, message: String) {
         guard index >= 0 && index < searchModels.count else {
             return ("", "")
@@ -21,36 +19,38 @@ class SearchViewModel: ObservableObject {
         
         let searchModel = searchModels[index]
         
-        switch searchModel.info {
-        case 1:
-            return ("icon_caution", "Require Attention")
-        case 2:
-            return ("icon_ban", "Do not Consume")
-        case 3:
-            return ("icon_safe", "It’s Safe")
-        default:
+        if let info = searchModel.info as? Int {
+            switch info {
+            case 1:
+                return ("icon_caution", "Require Attention")
+            case 2:
+                return ("icon_ban", "Do not Consume")
+            case 3:
+                return ("icon_safe", "It’s Safe")
+            default:
+                return ("", "")
+            }
+        } else {
             return ("", "")
         }
     }
 
-
-    func nutritionMessages(for index: Int) -> [String] {
+    func nutritionMessages(for index: Int) -> (tag1: String, tag2: String) {
         guard index >= 0 && index < searchModels.count else {
-            return [" "]
+            return ("", "")
         }
         let searchModel = searchModels[index]
         
         switch searchModel.foodInfo {
-        case 0:
-            return [" "]
+            
         case 1:
-            return ["essential nutrients"]
+            return ("Sometime Possible", "added over 20 people")
         case 2:
-            return ["added over 100 people"]
+            return ("Consume Frequently", "added over 10 people")
         case 3:
-            return ["essential nutrients", "added over 100 people"]
+            return ("Available after 30 days", "added over 30 people")
         default:
-            return [" "]
+            return ("", "")
         }
     }
     
