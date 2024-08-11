@@ -28,9 +28,7 @@ struct MainView: View {
                     selection: $viewModel.selectedTab
                 )
             }
-//            .onReceive(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Publisher@*/NotificationCenter.default.publisher(for: .NSCalendarDayChanged)/*@END_MENU_TOKEN@*/, perform: { _ in
-//                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=code@*/ /*@END_MENU_TOKEN@*/
-//            })
+            
                 .navigationDestination(for: NaviPath.self) { path in
                     switch path{
                     case .main: MainView()
@@ -68,6 +66,7 @@ struct SetView: View {
 
 struct WishListView: View {
     @Binding var paths: [NaviPath]
+    @State var items:[(String,Int)] = []
     var body: some View {
         
         ZStack {
@@ -80,8 +79,14 @@ struct WishListView: View {
                     FoodWishView(pathes: $paths)
                     WishRow()
                     WishRow()
-                }
-                
+                    ForEach(items.indices,id:\.self){ idx in
+                        WishRow(menu: items[idx].0, calc: items[idx].1)
+                    }
+                }.onReceive(AppManager.shard.foodItemPassthroughSubject, perform: { val in
+                    Task{@MainActor in
+                        items.append(val)
+                    }
+                })
             }
         }
     }
@@ -148,7 +153,6 @@ struct FoodWishView: View {
             
             Spacer()
             Button{
-                print("진행하자")
                 Task{@MainActor in
                     try await Task.sleep(nanoseconds:100)
                     self.pathes.append(.search)

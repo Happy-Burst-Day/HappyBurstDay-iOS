@@ -10,6 +10,7 @@ import Combine
 
 final class  AppManager{
     let loginPassthroughSubject = PassthroughSubject<Bool,Never>()
+    let foodItemPassthroughSubject = PassthroughSubject<(String,Int),Never>()
     static let shard = AppManager()
     private init(){
         DispatchQueue.main.asyncAfter(deadline: .now()){

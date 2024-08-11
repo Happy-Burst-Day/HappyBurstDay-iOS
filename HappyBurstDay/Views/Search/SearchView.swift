@@ -141,6 +141,7 @@ struct FoodRow: View {
                     showSnackbar = true
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         showSnackbar = false
+                        AppManager.shard.foodItemPassthroughSubject.send((viewModel.searchModels[index].food,Int(viewModel.searchModels[index].calorie) ?? 0 ))
                     }
                 }
         }
