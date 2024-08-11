@@ -6,24 +6,47 @@
 //
 
 import SwiftUI
-
+enum NaviPath:String, Hashable,Identifiable {
+    var id:String{ UUID().uuidString}
+    case main
+    case search
+    case nutrition
+    case setting
+}
 struct MainView: View {
     @StateObject private var viewModel = WishListViewModel()
-    
+    @State var naviPath:[NaviPath] = []
     var body: some View {
-        SetView()
-        
-        CustomTabView(
-            views: [
-                .one: AnyView(WishListView()),
-                .two:  AnyView(MyBabyView())
-            ],
-            selection: $viewModel.selectedTab
-        )
+        NavigationStack(path:$naviPath){
+            Group{
+                SetView(naviPath: $naviPath)
+                CustomTabView(
+                    views: [
+                        .one: AnyView(WishListView(paths: $naviPath)),
+                        .two:  AnyView(MyBabyView())
+                    ],
+                    selection: $viewModel.selectedTab
+                )
+            }
+//            .onReceive(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=Publisher@*/NotificationCenter.default.publisher(for: .NSCalendarDayChanged)/*@END_MENU_TOKEN@*/, perform: { _ in
+//                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=code@*/ /*@END_MENU_TOKEN@*/
+//            })
+                .navigationDestination(for: NaviPath.self) { path in
+                    switch path{
+                    case .main: MainView()
+                    case .nutrition: NutritionInfoView()
+                    case .search: SearchView(naviPath: self.$naviPath)
+                    case .setting:
+                        SettingView()
+                    }
+                }
+            
+        }
     }
 }
 
 struct SetView: View {
+    @Binding var naviPath:[NaviPath]
     var body: some View {
         HStack {
             Text("BabyMomma")
@@ -31,22 +54,20 @@ struct SetView: View {
                 .fontWeight(.bold)
                 .padding(.leading, 20)
                 .foregroundColor(.darkMint)
-            
             Spacer()
-            
             Image(systemName: "gearshape")
                 .font(.system(size: 20))
                 .padding(.trailing, 24)
                 .foregroundColor(.darkMint)
                 .onTapGesture {
-                    
-                    
+                    naviPath.append(.setting)
             }
         }
     }
 }
 
 struct WishListView: View {
+    @Binding var paths: [NaviPath]
     var body: some View {
         
         ZStack {
@@ -56,7 +77,7 @@ struct WishListView: View {
             ScrollView{
                 VStack(spacing: 0) {
                     TopView()
-                    FoodWishView()
+                    FoodWishView(pathes: $paths)
                     WishRow()
                     WishRow()
                 }
@@ -112,6 +133,7 @@ struct ImageCarouselView: View {
 }
 
 struct FoodWishView: View {
+    @Binding var pathes:[NaviPath]
     var body: some View {
         HStack {
             VStack(spacing: 6){
@@ -125,21 +147,27 @@ struct FoodWishView: View {
             }.padding(.leading, 21)
             
             Spacer()
-            
-            HStack(spacing: 5) {
-                Image(systemName: "plus")
-                    .font(.system(size: 12))
-                    .foregroundColor(.white)
-                
-                Text("Add")
-                    .font(.Body.body2)
-                    .foregroundColor(.white)
+            Button{
+                print("진행하자")
+                Task{@MainActor in
+                    try await Task.sleep(nanoseconds:100)
+                    self.pathes.append(.search)
+                }
+            }label:{
+                HStack(spacing: 5) {
+                    Image(systemName: "plus")
+                        .font(.system(size: 12))
+                        .foregroundColor(.white)
+                    Text("Add")
+                        .font(.Body.body2)
+                        .foregroundColor(.white)
+                }
+                .padding(.vertical, 9)
+                .padding(.horizontal, 11)
+                .background(Color.customBlack)
+                .cornerRadius(10)
+                .padding(.trailing, 21)
             }
-            .padding(.vertical, 9)
-            .padding(.horizontal, 11)
-            .background(Color.customBlack)
-            .cornerRadius(10)
-            .padding(.trailing, 21)
         }
         .padding(.bottom, 25)
     }
@@ -148,7 +176,8 @@ struct FoodWishView: View {
 struct WishRow: View {
     
     @State private var heartCount: Int = 0
-    
+    var menu = "Steak Rice Bowl"
+    var calc:Int = 430
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 12) {
@@ -160,11 +189,11 @@ struct WishRow: View {
                 }
                 
                 HStack(spacing: 10) {
-                    Text("Steak Rice Bowl")
+                    Text("\(menu)")
                         .font(.Title.title3)
                         .foregroundColor(.customBlack)
                     
-                    Text("430 kcal")
+                    Text("\(calc) kcal")
                         .font(.Body.body2)
                         .foregroundColor(.gray600)
                         .padding(.top, 4)

@@ -49,7 +49,7 @@ struct SettingView: View {
             }
             .padding(.horizontal)
             .padding(.bottom, 30)
-        }
+        }.toolbar(.hidden, for: .navigationBar)
         .clipped()
     }
 }

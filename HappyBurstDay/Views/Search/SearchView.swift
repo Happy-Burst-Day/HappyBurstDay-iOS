@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    
+    @Binding var naviPath:[NaviPath]
     @StateObject private var viewModel = SearchViewModel()
     
     @State private var isAddedToWishlist: Bool = false
@@ -39,7 +39,7 @@ struct SearchView: View {
                     .padding(.top, 600)
             }
             
-        }
+        }.toolbar(.hidden, for: .navigationBar)
     }
     
 }
@@ -180,6 +180,6 @@ func performSearch() {
 //    }
 }
 
-#Preview {
-    SearchView()
-}
+//#Preview {
+//    SearchView()
+//}
